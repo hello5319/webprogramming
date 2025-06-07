@@ -179,20 +179,22 @@ nav {
   box-shadow: 0 2px 12px rgba(0,0,0,0.15);
   padding: 0.8rem 0.8rem 1.1rem 0.8rem;
   width: 210px;
-  min-height: 220px;
+  min-height: 360px; /* 원래 220px → 이미지와 텍스트 공간 확보 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transition: box-shadow 0.2s;
   margin: 0;
 }
+
 .product-card.urban-item img {
   width: 100%;
-  height: 220px;
+  height: 240px; /* 원래 220px → 더 크게 보여줌 */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 0.8rem;
 }
+
 .urban-item-title {
   font-size: 1.02rem;
   color: #e01c1c;
