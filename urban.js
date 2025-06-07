@@ -280,7 +280,7 @@ const filterTitles = {
   user: '사용자 제보 괴담'
 };
 
-const urbanData = [
+export const urbanData = [
   {
     id: 1,
     title: '층간소음',
