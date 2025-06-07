@@ -10,21 +10,49 @@
     import './main.js';
 
     window.addEventListener("DOMContentLoaded", () => {
-      const container = document.getElementById("homeSlider");
-      if (!container || typeof urbanData === "undefined") return;
+      const slider = document.getElementById('homeSlider');
+      if (slider && urbanData) {
+        const sorted = [...urbanData].sort((a, b) => b.likes - a.likes).slice(0, 5);
+        slider.innerHTML = sorted.map(item => `
+          <div class="product-card" data-id="${item.id}">
+            <img src="${item.thumb}" alt="${item.title}">
+            <div class="product-title">${item.title}</div>
+            <div class="rating">${'★'.repeat(item.level)}${'☆'.repeat(5 - item.level)}</div>
+            <div class="product-price">좋아요 ${item.likes}개</div>
+          </div>
+        `).join('');
 
-      const sorted = [...urbanData].sort((a, b) => b.likes - a.likes).slice(0, 5);
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.addEventListener('click', function () {
+            const id = this.getAttribute('data-id');
+            window.location.href = `urban.html?id=${id}`;
+          });
+        });
 
-      sorted.forEach((story) => {
-        const slide = document.createElement("div");
-        slide.classList.add("single-slider");
-        slide.innerHTML = `
-          <img src="${story.thumb}" alt="${story.title}" />
-          <h4>${story.title}</h4>
-          <p>${story.body.substring(0, 60)}...</p>
-        `;
-        container.appendChild(slide);
-      });
+        let idx = 0;
+        const visible = 2.3;
+
+        function updateSlider() {
+          const card = slider.querySelector('.product-card');
+          const cardWidth = card ? card.offsetWidth + 32 : 260;
+          slider.style.transform = `translateX(${-idx * cardWidth}px)`;
+        }
+
+        document.getElementById('sliderPrev').onclick = function () {
+          idx = Math.max(0, idx - 1);
+          updateSlider();
+        };
+
+        document.getElementById('sliderNext').onclick = function () {
+          const card = slider.querySelector('.product-card');
+          const cardWidth = card ? card.offsetWidth + 32 : 260;
+          const maxIdx = Math.max(0, slider.children.length - Math.ceil(visible));
+          idx = Math.min(maxIdx, idx + 1);
+          updateSlider();
+        };
+
+        updateSlider();
+      }
     });
   </script>
 </head>
