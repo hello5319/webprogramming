@@ -5,6 +5,27 @@
   <title>홈 | 괴담지옥</title>
   <link rel="stylesheet" href="style.css" />
   <script type="module" src="main.js"></script>
+  <script type="module">
+    import { urbanData } from './urban.js';
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("homeSlider");
+      if (!container || typeof urbanData === "undefined") return;
+
+      const sorted = [...urbanData].sort((a, b) => b.likes - a.likes).slice(0, 5);
+
+      sorted.forEach((story) => {
+        const slide = document.createElement("div");
+        slide.classList.add("single-slider");
+        slide.innerHTML = `
+          <img src="${story.thumb}" alt="${story.title}" />
+          <h4>${story.title}</h4>
+          <p>${story.body.substring(0, 60)}...</p>
+        `;
+        container.appendChild(slide);
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -60,19 +81,19 @@
   <!-- 히어로 영역 -->
   <section class="hero-section">
     <div class="hero-content">
-      <h1>다양한 이야기와 커뮤니티를 통한<br>새로운 경험, 지금 즐겨보세요!</h1>
+      <h1>다양한 이야기와 커미니티를 통한<br>새로운 경험, 지금 즐겨보세요!</h1>
       <button class="hero-btn" id="heroActionBtn">시작하기</button>
     </div>
   </section>
 
-  <!-- 인기 괴담 슬라이더 영역 -->
+  <!-- 인기 곰달 슬라이더 영역 -->
   <section class="main-section" id="popularSection">
     <h2 class="slider-title">인기 괴담</h2>
     <div class="slider-area">
       <div class="slider-arrow" id="sliderPrev">&lt;</div>
       <div class="product-slider-wrapper">
         <div class="product-slider" id="homeSlider">
-          <!-- JS로 카드 삽입 -->
+          <!-- JS로 카드 생성 -->
         </div>
       </div>
       <div class="slider-arrow" id="sliderNext">&gt;</div>
