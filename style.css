@@ -169,12 +169,12 @@ nav {
 .product-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.2rem 2.2rem;
+  gap: 2rem 2rem;
   flex: 1;
   justify-content: flex-start;
 }
 .product-card.urban-item {
-  width: 100%;
+  width: calc(25% - 1.5rem);
   min-height: 280px;
   background: #181818;
   padding: 1rem;
