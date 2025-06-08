@@ -343,7 +343,7 @@ function renderUrbanList(sortType, filterType) {
   const urbanList = document.getElementById('urbanList');
   urbanList.innerHTML = list.map(item => `
     <div class="product-card urban-item" data-id="${item.id}" style="cursor:pointer;">
-      <img src="${item.thumb}" alt="${item.title}" style="width:100%;height:115px;object-fit:cover;border-radius:8px;margin-bottom:0.8rem;">
+      <img src="${item.thumb}" alt="${item.title}" style="width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:0.8rem;">
       <div class="urban-item-title" style="margin-bottom:0.5rem;">${item.title}</div>
       <div class="urban-item-meta" style="margin-bottom:0.4rem;">
         <span>좋아요 ${item.likes}개</span>
