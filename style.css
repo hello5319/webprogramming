@@ -174,7 +174,7 @@ nav {
   justify-content: flex-start;
 }
 .product-card.urban-item {
-  width: calc(25% - 1.5rem);
+  width: calc((100% - 4.5rem)/4);
   min-height: 280px;
   background: #181818;
   padding: 1rem;
