@@ -310,7 +310,7 @@ export const urbanData = [
     date: '2025-05-21',
     filter: 'true',
     level: 5,
-    thumb: 'https://images.unsplash.com/photo-1465101178521-c1a9136a3f41?auto=format&fit=crop&w=400&q=80',
+    thumb: 'image/urbna3.png',
     body: '엘리베이터에 홀로 타고 있는데, 누군가 버튼을 누른 것도 아닌데 갑자기 13층에 멈췄다. 문이 열리고 아무도 없었다...',
     detail: `엘리베이터를 타고 가던 중, 목적지와는 전혀 상관없는 13층에서 멈췄고, 문이 열렸지만 아무도 없었습니다. 괜히 오싹해서 바로 닫힘 버튼을 [...]`
   },
@@ -321,7 +321,7 @@ export const urbanData = [
     date: '2025-05-19',
     filter: 'user',
     level: 1,
-    thumb: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80',
+    thumb: 'image/urban4.png',
     body: '이 이야기는 실제로 내가 겪은 일이다...',
     detail: `어릴 적 시골집에서 혼자 잠을 자는데 누군가 이불을 잡아당기는 느낌이 들었습니다. 눈을 떠보니 아무도 없었고, 이불은 그대로였습니다. [...]`
   }
