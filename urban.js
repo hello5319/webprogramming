@@ -310,7 +310,7 @@ export const urbanData = [
     date: '2025-05-21',
     filter: 'true',
     level: 5,
-    thumb: 'image/urbna3.png',
+    thumb: 'image/urban3.png',
     body: '엘리베이터에 홀로 타고 있는데, 누군가 버튼을 누른 것도 아닌데 갑자기 13층에 멈췄다. 문이 열리고 아무도 없었다...',
     detail: `엘리베이터를 타고 가던 중, 목적지와는 전혀 상관없는 13층에서 멈췄고, 문이 열렸지만 아무도 없었습니다. 괜히 오싹해서 바로 닫힘 버튼을 [...]`
   },
