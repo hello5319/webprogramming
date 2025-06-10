@@ -293,6 +293,24 @@ nav {
   cursor: default !important;
 }
 
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.write-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
 /* ------ 홈(main-section, slider 등) ------ */
 .main-section {
   max-width: 1200px;
