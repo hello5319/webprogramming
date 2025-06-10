@@ -471,7 +471,7 @@ footer {
 }
 
 .hero-section {
-  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  background: url('image/hero.webp') center/cover no-repeat;
   color: #fff;
   padding: 7rem 2rem;
   text-align: center;
