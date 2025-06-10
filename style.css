@@ -223,6 +223,11 @@ nav {
   z-index: 5;
 }
 
+/* 본문 줄바꿈 처리 */
+.urban-item-body {
+  white-space: pre-line;
+}
+
 /* ------ community(커뮤니티) ------ */
 .community-header {
   display: flex;
