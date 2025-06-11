@@ -26,12 +26,25 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+// urban{id} 전역 객체 생성 (id 1~4 예시)
+for (let id = 1; id <= 4; id++) {
+  window[`urban${id}`] = { likes: 0 };
+}
 const auth = getAuth(app);
 
 let currentUser = null;
 onAuthStateChanged(auth, user => {
   currentUser = user;
 });
+
+async function syncLikesToGlobals() {
+  for (let id = 1; id <= 4; id++) {
+    const ref = doc(db, 'urbanLikes', String(id));
+    const snap = await getDoc(ref);
+    const count = snap.exists() ? snap.data().count : 0;
+    window[`urban${id}`].likes = count;
+  }
+}
 
 function getParamFromURL(name) {
   const params = new URLSearchParams(window.location.search);
@@ -368,7 +381,7 @@ export const urbanData = [
   {
     id: 2,
     title: '하나코야 놀자',
-    likes: 25,
+    likes: urban2.likes,
     date: '2025-05-18',
     filter: 'foreign',
     level: 4,
@@ -511,6 +524,8 @@ function renderUrbanList(sortType, filterType) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  await syncLikesToGlobals();
+  
   if (document.getElementById('urbanList')) {
     let sortType = 'latest';
     let filterType = getParamFromURL('filter') || 'all';
