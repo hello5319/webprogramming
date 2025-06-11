@@ -397,7 +397,7 @@ export const urbanData = [
             유이는 말없이 마지막 칸 앞에 섰다.
             그리고 조용히 이름을 불렀다.
             \n
-            "하나코야, 놀자."\n
+            <span class="click-image" data-img="image/urban1.webp">"하나코야, 놀자."</span>\n
             "하나코야, 놀자."\n
             "하나코야, 놀자."
             \n
@@ -558,5 +558,21 @@ document.addEventListener('DOMContentLoaded', () => {
         updateUrbanTitle(filterType);
       }
     });
+  }
+});
+
+// ✅ 여기부터 클릭 이미지 팝업 기능 추가
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("click-image")) {
+    const imgUrl = e.target.getAttribute("data-img");
+
+    const popup = document.createElement("div");
+    popup.className = "fullscreen-popup";
+    popup.style.backgroundImage = `url(${imgUrl})`;
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+      popup.remove();
+    }, 2500);
   }
 });
