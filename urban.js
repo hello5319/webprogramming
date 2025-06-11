@@ -381,7 +381,7 @@ export const urbanData = [
   {
     id: 2,
     title: '하나코야 놀자',
-    likes: urban2.likes,
+    likes: 0,
     date: '2025-05-18',
     filter: 'foreign',
     level: 4,
@@ -488,6 +488,16 @@ export const urbanData = [
   }
 ];
 
+async function syncLikesToUrbanData() {
+  for (const item of urbanData) {
+    const ref = doc(db, 'urbanLikes', String(item.id));
+    const snap = await getDoc(ref);
+    if (snap.exists()) {
+      item.likes = snap.data().count || 0;
+    }
+  }
+}
+
 function renderUrbanList(sortType, filterType) {
   let list = [...urbanData];
   if (filterType && filterType !== 'all') {
@@ -523,7 +533,7 @@ function renderUrbanList(sortType, filterType) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   await syncLikesToGlobals();
   
   if (document.getElementById('urbanList')) {
@@ -591,3 +601,5 @@ document.addEventListener("click", (e) => {
     }, 2500);
   }
 });
+
+
