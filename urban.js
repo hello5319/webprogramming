@@ -381,7 +381,7 @@ export const urbanData = [
   {
     id: 2,
     title: '하나코야 놀자',
-    likes: 0,
+    likes: urban2.likes,
     date: '2025-05-18',
     filter: 'foreign',
     level: 4,
