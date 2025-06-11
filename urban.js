@@ -1,3 +1,4 @@
+
 // ✅ urban.js: 괴담 목록, 상세보기, 좋아요 및 댓글 기능 포함 + Firebase 유저 닉네임 반영 (댓글 예외처리 추가) + 오디오 기능
 
 import {
@@ -284,11 +285,11 @@ export const urbanData = [
   {
     id: 1,
     title: '층간소음',
-    likes: '<span id="likeCount">0</span>',
+    likes: 13,
     date: '2025-05-20',
     filter: 'korea',
     level: 4,
-    thumb: 'image/urban1.webp',
+    thumb: 'image/urban1.png',
     body: '어두운 밤, 골목길을 걷다가 누군가 따라오는 듯한 기분에 뒤를 돌아봤지만 아무도 없었다. 하지만 발소리는 점점 가까워졌다...',
     detail: `우리 집은 어릴 적엔 꽤 부유하게 살았어요.
             그런데 어느 날, 아빠 사업이 잘 안 되면서 집이 잠깐 휘청했죠.\n
@@ -372,7 +373,7 @@ export const urbanData = [
     date: '2025-05-18',
     filter: 'foreign',
     level: 4,
-    thumb: 'image/urban2.webp',
+    thumb: 'image/urban2.png',
     body: '우리 학교에는 밤마다 혼자 남아 있으면 들린다는 피아노 소리에 대한 소문이 있다. 실제로 경험한 친구의 이야기를 들었다...',
     detail: `이 이야기는, 일본의 한 초등학교에서 시작된다.
             오래된 3층 여자 화장실.
@@ -397,7 +398,7 @@ export const urbanData = [
             유이는 말없이 마지막 칸 앞에 섰다.
             그리고 조용히 이름을 불렀다.
             \n
-            <span class="click-image" data-img="image/urban1.webp">"하나코야, 놀자."</span>\n
+            "하나코야, 놀자."\n
             "하나코야, 놀자."\n
             "하나코야, 놀자."
             \n
@@ -458,28 +459,43 @@ export const urbanData = [
     date: '2025-05-21',
     filter: 'true',
     level: 5,
-    thumb: 'image/urban3.webp',
+    thumb: 'image/urban3.png',
     body: '엘리베이터에 홀로 타고 있는데, 누군가 버튼을 누른 것도 아닌데 갑자기 13층에 멈췄다. 문이 열리고 아무도 없었다...',
     detail: `엘리베이터를 타고 가던 중, 목적지와는 전혀 상관없는 13층에서 멈췄고, 문이 열렸지만 아무도 없었습니다. 괜히 오싹해서 바로 닫힘 버튼을 [...]`
   },
   {
     id: 4,
     title: '졸음운전',
-    likes: 18,
     date: '2025-05-19',
     filter: 'user',
     level: 1,
-    thumb: 'image/urban4.webp',
+    thumb: 'image/urban4.png',
     body: '이 이야기는 실제로 내가 겪은 일이다...',
     detail: `어릴 적 시골집에서 혼자 잠을 자는데 누군가 이불을 잡아당기는 느낌이 들었습니다. 눈을 떠보니 아무도 없었고, 이불은 그대로였습니다. [...]`
   }
 ];
 
-function renderUrbanList(sortType, filterType) {
-  let list = [...urbanData];
+async function renderUrbanList(sortType, filterType) {
+  // 1) Firestore에서 urbanLikes 컬렉션 읽어오기
+  const likesSnapshot = await getDocs(collection(db, 'urbanLikes'));
+  const firebaseLikes = {};
+  likesSnapshot.forEach(docSnap => {
+    // 문서 ID가 postId (문자열)라고 가정
+    firebaseLikes[docSnap.id] = docSnap.data().count || 0;
+  });
+
+  // 2) urbanData와 병합하여 새 배열 생성
+  let list = urbanData.map(item => ({
+    ...item,
+    likes: firebaseLikes[String(item.id)] ?? 0
+  }));
+
+  // 3) 필터링
   if (filterType && filterType !== 'all') {
     list = list.filter(item => item.filter === filterType);
   }
+
+  // 4) 정렬
   if (sortType === 'latest') {
     list.sort((a, b) => b.date.localeCompare(a.date));
   } else if (sortType === 'popular') {
@@ -488,6 +504,7 @@ function renderUrbanList(sortType, filterType) {
     list.sort((a, b) => b.level - a.level);
   }
 
+  // 5) 렌더링
   const urbanList = document.getElementById('urbanList');
   urbanList.innerHTML = list.map(item => `
     <div class="product-card urban-item" data-id="${item.id}" style="cursor:pointer;">
@@ -497,10 +514,13 @@ function renderUrbanList(sortType, filterType) {
         <span>좋아요 ${item.likes}개</span>
         <span>${item.date}</span>
       </div>
-      <div style="color:#e01c1c;font-size:0.95rem;margin-bottom:0.2rem;">공포 난이도: ${renderLevelStars(item.level)}</div>
+      <div style="color:#e01c1c;font-size:0.95rem;margin-bottom:0.2rem;">
+        공포 난이도: ${renderLevelStars(item.level)}
+      </div>
     </div>
   `).join('');
 
+  // 6) 클릭 이벤트 바인딩
   document.querySelectorAll('.urban-item').forEach(itemElem => {
     itemElem.addEventListener('click', function () {
       const clickId = this.getAttribute('data-id');
@@ -558,21 +578,5 @@ document.addEventListener('DOMContentLoaded', () => {
         updateUrbanTitle(filterType);
       }
     });
-  }
-});
-
-// ✅ 여기부터 클릭 이미지 팝업 기능 추가
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("click-image")) {
-    const imgUrl = e.target.getAttribute("data-img");
-
-    const popup = document.createElement("div");
-    popup.className = "fullscreen-popup";
-    popup.style.backgroundImage = `url(${imgUrl})`;
-    document.body.appendChild(popup);
-
-    setTimeout(() => {
-      popup.remove();
-    }, 2500);
   }
 });
