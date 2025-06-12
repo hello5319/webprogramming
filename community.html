@@ -59,19 +59,21 @@
   <main>
   <!-- 1) 게시판 헤더 + 글쓰기 버튼 -->
   <section style="max-width: 900px; margin: 2rem auto 1rem auto; padding: 0 2rem;">
-    <div class="community-header" style="display: flex; justify-content: space-between; align-items: center;">
-      <h2 id="boardTitle" style="margin: 0;">자유게시판</h2>
-      <!-- 버튼 묶음 (정렬 + 글쓰기) -->
-    <div class="board-controls">
-      <div class="sort-buttons">
-        <button class="sort-btn active" data-sort="latest">최신순</button>
-        <button class="sort-btn" data-sort="popular">인기순</button>
-      </div>
-      <div class="write-button-wrapper">
-        <button id="showWriteForm" class="write-btn">글쓰기+</button>
-      </div>
+  <!-- 게시판 제목만 한 줄 -->
+  <div class="community-header">
+    <h2 id="boardTitle" style="margin: 0;">자유게시판</h2>
+  </div>
+  <!-- 버튼 두 개를 좌우로 분리 -->
+  <div class="board-controls">
+    <div class="sort-buttons">
+      <button class="sort-btn active" data-sort="latest">최신순</button>
+      <button class="sort-btn" data-sort="popular">인기순</button>
     </div>
-  </section>
+    <div class="write-button-wrapper">
+      <button id="showWriteForm" class="write-btn">글쓰기</button>
+    </div>
+  </div>
+</section>
 
   <!-- 3) 글쓰기 폼 -->
   <form id="writeForm" style="display:none; margin:2rem auto; max-width:600px;">
