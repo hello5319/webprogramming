@@ -135,18 +135,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (bgmBtn && bgmAudio && bgmStatusText) {
     let isPlaying = localStorage.getItem('bgmStatus') === 'on';
+    // 재생 위치 저장 (매 초마다 갱신됨)
+    bgmAudio.addEventListener("timeupdate", () => {
+      localStorage.setItem("bgmCurrentTime", bgmAudio.currentTime);
+    });
 
     function updateState(play) {
-      if (play) {
-        bgmAudio.play().catch(() => {});
-        bgmStatusText.textContent = 'ON';
-        localStorage.setItem('bgmStatus', 'on');
-      } else {
-        bgmAudio.pause();
-        bgmStatusText.textContent = 'OFF';
-        localStorage.setItem('bgmStatus', 'off');
-      }
-    }
+  if (play) {
+    const savedTime = localStorage.getItem("bgmCurrentTime");
+    if (savedTime) bgmAudio.currentTime = parseFloat(savedTime);  // 👉 저장된 시간 복원
+    bgmAudio.play().catch(() => {});
+    bgmStatusText.textContent = 'ON';
+    localStorage.setItem('bgmStatus', 'on');
+  } else {
+    bgmAudio.pause();
+    bgmStatusText.textContent = 'OFF';
+    localStorage.setItem('bgmStatus', 'off');
+  }
+}
+
 
     updateState(isPlaying);
 
