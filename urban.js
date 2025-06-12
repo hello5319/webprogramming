@@ -196,42 +196,74 @@ function renderUrbanDetail(id) {
 
   // 상세 뷰 HTML + 오디오 버튼 & <audio> 태그 포함
   urbanList.innerHTML = `
-    <div class="product-card urban-item urban-detail" style="width:100%;max-width:1200px;margin:0 auto; position: relative;">
-      <!-- 음성 모드 버튼 -->
-      <div class="voice-mode" style="position:absolute; top:1rem; right:1rem;">
-        <button id="playVoiceBtn" style="background:#444; color:#fff; border:none; padding:0.5rem 1rem; border-radius:6px; cursor:pointer;">
-          🎧 음성 모드
-        </button>
-        <audio id="urbanVoiceAudio" style="display:none; margin-top:0.5rem; width:100%;">
+  <div class="product-card urban-item urban-detail" style="width:100%;max-width:1200px;margin:0 auto; position: relative;">
+    <!-- 음성 모드 버튼 + 커스텀 컨트롤러 -->
+    <div class="voice-mode" style="position:absolute; top:1rem; right:1rem;">
+      <button id="playVoiceBtn" style="background:#444; color:#fff; border:none; padding:0.5rem 1rem; border-radius:6px; cursor:pointer;">
+        🎧 음성 모드
+      </button>
+
+      <div id="customAudioContainer" class="custom-audio-player" style="display:none; margin-top:0.5rem;">
+        <button id="playPauseBtn">▶</button>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+        <audio id="urbanVoiceAudio" style="display: none;">
           <source src="audio/urban${id}.mp3" type="audio/mpeg">
           브라우저가 오디오를 지원하지 않습니다.
         </audio>
       </div>
-
-      <div class="urban-item-title" style="font-size:1.5rem;margin-bottom:0.6rem;">${data.title}</div>
-      <div class="urban-item-meta">
-        <span>${data.date}</span>
-      </div>
-      <div style="color:#e01c1c;font-size:1rem;margin-bottom:0.8rem;">공포 난이도: ${renderLevelStars(data.level)}</div>
-      <div class="urban-item-body" style="margin-top:1.2rem; font-size:1.1rem; line-height:1.7;">${data.detail}</div>
-
-      <div class="like-section" style="margin-top: 1rem;">
-        <button id="likeBtn">❤️ 좋아요</button> <span id="likeCount">0</span>
-      </div>
-
-      <div class="comment-section" style="margin-top:2rem;">
-        <form id="commentForm">
-          <input type="text" id="commentInput" placeholder="댓글을 입력하세요" required />
-          <button type="submit">댓글 작성</button>
-        </form>
-        <div id="commentList"></div>
-      </div>
-
-      <button class="urban-back-btn" style="margin-top:2rem; background:#222;color:#fafafa;border:none;padding:0.7rem 1.6rem;border-radius:8px;cursor:pointer;">
-        목록으로
-      </button>
     </div>
-  `;
+
+    <div class="urban-item-title" style="font-size:1.5rem;margin-bottom:0.6rem;">${data.title}</div>
+    <div class="urban-item-meta"><span>${data.date}</span></div>
+    <div style="color:#e01c1c;font-size:1rem;margin-bottom:0.8rem;">공포 난이도: ${renderLevelStars(data.level)}</div>
+    <div class="urban-item-body" style="margin-top:1.2rem; font-size:1.1rem; line-height:1.7;">${data.detail}</div>
+
+    <div class="like-section" style="margin-top: 1rem;">
+      <button id="likeBtn">❤️ 좋아요</button> <span id="likeCount">0</span>
+    </div>
+
+    <div class="comment-section" style="margin-top:2rem;">
+      <form id="commentForm">
+        <input type="text" id="commentInput" placeholder="댓글을 입력하세요" required />
+        <button type="submit">댓글 작성</button>
+      </form>
+      <div id="commentList"></div>
+    </div>
+
+    <button class="urban-back-btn" style="margin-top:2rem; background:#222;color:#fafafa;border:none;padding:0.7rem 1.6rem;border-radius:8px;cursor:pointer;">
+      목록으로
+    </button>
+  </div>
+`;
+
+  setTimeout(() => {
+  const playBtn = document.getElementById("playVoiceBtn");
+  const audio = document.getElementById("urbanVoiceAudio");
+  const audioContainer = document.getElementById("customAudioContainer");
+  const playPauseBtn = document.getElementById("playPauseBtn");
+  const volumeSlider = document.getElementById("volumeSlider");
+
+  if (playBtn && audio && audioContainer) {
+    playBtn.addEventListener("click", () => {
+      audioContainer.style.display = "flex";
+    });
+
+    playPauseBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playPauseBtn.textContent = "⏸";
+      } else {
+        audio.pause();
+        playPauseBtn.textContent = "▶";
+      }
+    });
+
+    volumeSlider.addEventListener("input", () => {
+      audio.volume = volumeSlider.value;
+    });
+  }
+}, 0); // innerHTML 적용 이후 DOM 요소 존재 보장
+
 
   // “목록으로” 클릭 시 뒤로가기
   document.querySelector('.urban-back-btn').addEventListener('click', () => {
