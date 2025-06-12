@@ -328,6 +328,58 @@ nav {
   background: #a81414;
 }
 
+/*글쓰기 폼 스타일*/
+#writeForm {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#writeForm input,
+#writeForm select,
+#writeForm textarea {
+  background: #111;
+  color: #fafafa;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#writeForm input:focus,
+#writeForm select:focus,
+#writeForm textarea:focus {
+  border-color: #e01c1c;
+  box-shadow: 0 0 0 2px rgba(224, 28, 28, 0.3);
+}
+
+#writeForm textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #e01c1c;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-end;
+}
+
+.submit-btn:hover {
+  background: #a81414;
+}
+
 
 /* ------ 홈(main-section, slider 등) ------ */
 .main-section {
