@@ -228,6 +228,32 @@ nav {
   white-space: pre-line;
 }
 
+/*커스텀 컨트롤러*/
+.custom-audio-player {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #222;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.custom-audio-player button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.custom-audio-player input[type="range"] {
+  width: 120px;
+  accent-color: #e01c1c;
+  height: 4px;
+}
+
+
 /* ------ community(커뮤니티) ------ */
 .community-header {
   display: flex;
