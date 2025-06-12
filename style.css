@@ -294,10 +294,11 @@ nav {
 }
 
 /*글쓰기 버튼 디자인*/
-.board-header {
+.board-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -306,14 +307,8 @@ nav {
   gap: 0.5rem;
 }
 
-.write-button-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-}
-
 .write-btn {
-  background: #e01c1c; /* 강조 빨강 */
+  background: #e01c1c;
   color: #fff;
   border: none;
   padding: 0.5rem 1.2rem;
@@ -324,8 +319,9 @@ nav {
 }
 
 .write-btn:hover {
-  background: #a81414; /* 더 어두운 빨강 */
+  background: #a81414;
 }
+
 
 
 /* ------ 홈(main-section, slider 등) ------ */
