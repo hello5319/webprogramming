@@ -337,6 +337,8 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
 }
 
 #writeForm input,
@@ -346,10 +348,11 @@ nav {
   color: #fafafa;
   border: 1px solid #333;
   border-radius: 6px;
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 1rem;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
 }
 
 #writeForm input:focus,
@@ -364,13 +367,14 @@ nav {
   resize: vertical;
 }
 
+/* 버튼 디자인 - 작게 */
 .submit-btn {
   background: #e01c1c;
   color: white;
   border: none;
-  padding: 0.7rem 1.4rem;
+  padding: 0.35rem 0.8rem;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: background 0.2s;
   align-self: flex-end;
