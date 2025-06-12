@@ -61,13 +61,13 @@
   <section style="max-width: 900px; margin: 2rem auto 1rem auto; padding: 0 2rem;">
     <div class="community-header" style="display: flex; justify-content: space-between; align-items: center;">
       <h2 id="boardTitle" style="margin: 0;">자유게시판</h2>
-      <button id="showWriteForm" class="write-btn">글쓰기+</button>
-    </div>
-
-    <!-- 2) 정렬 버튼 -->
-    <div class="community-sort" style="margin-top: 1rem;">
-      <button class="sort-btn active" data-sort="latest">최신순</button>
-      <button class="sort-btn" data-sort="popular">인기순</button>
+      <!-- 버튼 묶음 (정렬 + 글쓰기) -->
+    <div class="board-controls">
+      <div class="sort-buttons">
+        <button class="sort-btn active">최신순</button>
+        <button class="sort-btn">인기순</button>
+      </div>
+      <button class="write-btn">글쓰기</button>
     </div>
   </section>
 
