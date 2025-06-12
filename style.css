@@ -241,11 +241,11 @@ nav {
   color: #fafafa;
   letter-spacing: 1px;
 }
-.community-sort {
+.sort-buttons {
   display: flex;
   gap: 1rem;
 }
-.community-sort button {
+.sort-buttons button {
   background: #222;
   color: #fafafa;
   border: none;
@@ -255,7 +255,7 @@ nav {
   font-size: 1rem;
   transition: background 0.18s, color 0.18s;
 }
-.community-sort button.active, .community-sort button:hover {
+.sort-buttons button.active, .sort-buttons button:hover {
   background: #e01c1c;
   color: #fff;
 }
