@@ -238,6 +238,9 @@ function renderUrbanDetail(id) {
 
   // “목록으로” 클릭 시 뒤로가기
   document.querySelector('.urban-back-btn').addEventListener('click', () => {
+    document.getElementById('mainTitle')?.classList.remove('hide-on-detail');
+    document.getElementById('sortButtons')?.classList.remove('hide-on-detail');
+
     window.history.back();
   });
 
