@@ -211,7 +211,7 @@ document.addEventListener("click", (e) => {
 
     setTimeout(() => {
       popup.remove();
-    }, 2500);
+    }, 1500);
   }
 });
   // 상세 뷰 HTML + 오디오 버튼 & <audio> 태그 포함
