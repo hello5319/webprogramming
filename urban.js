@@ -34,6 +34,15 @@ onAuthStateChanged(auth, user => {
   currentUser = user;
 });
 
+// 1) 함수 정의 (파일 최상단, import 아래)
+function hideUrbanHeader() {
+  const params = new URLSearchParams(location.search);
+  if (params.has("id")) {
+    document.querySelector(".urban-title")?.style.display = "none";
+    document.querySelector(".urban-sort")?.style.display  = "none";
+  }
+}
+
 function getParamFromURL(name) {
   const params = new URLSearchParams(window.location.search);
   return params.get(name);
@@ -188,6 +197,7 @@ function setupCommentSection(postId) {
 }
 
 function renderUrbanDetail(id) {
+  hideUrbanHeader();
   const urbanList = document.getElementById('urbanList');
   const data = urbanData.find(item => item.id === id);
   if (!data) return;
@@ -531,6 +541,11 @@ async function renderUrbanList(sortType, filterType) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 2) 가리기
+  document.addEventListener("DOMContentLoaded", () => {
+    hideUrbanHeader();
+  });
+
   if (document.getElementById('urbanList')) {
     let sortType = 'latest';
     let filterType = getParamFromURL('filter') || 'all';
@@ -569,6 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('popstate', function () {
+      hideUrbanHeader();
       const idParam = getParamFromURL('id');
       filterType = getParamFromURL('filter') || 'all';
       if (idParam) {
