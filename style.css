@@ -228,6 +228,10 @@ nav {
   white-space: pre-line;
 }
 
+/* style.css 등 */
+.hide-on-detail {
+  display: none !important;
+}
 
 /* ------ community(커뮤니티) ------ */
 .community-header {
@@ -790,3 +794,4 @@ footer {
   80% { transform: translate(-51%, -49%) rotate(-0.5deg); }
   100% { transform: translate(-50%, -50%) rotate(0deg); }
 }
+
