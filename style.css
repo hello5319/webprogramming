@@ -223,11 +223,6 @@ nav {
   z-index: 5;
 }
 
-/* 본문 줄바꿈 처리 */
-.urban-item-body {
-  white-space: pre-line;
-}
-
 /* 클릭 힌트 스타일 */
 .click-hint {
   display: inline-block;
