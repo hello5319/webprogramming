@@ -793,33 +793,3 @@ footer {
   80% { transform: translate(-51%, -49%) rotate(-0.5deg); }
   100% { transform: translate(-50%, -50%) rotate(0deg); }
 }
-
-/* 공통 좋아요 버튼 스타일 */
-.like-button {
-  background: transparent;
-  border: 2px solid #e74c3c;
-  color: #e74c3c;
-  font-size: 1rem;
-  padding: 0.4rem 1rem;
-  border-radius: 0.5rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s, transform 0.1s;
-}
-.like-button:hover:not(:disabled) {
-  background-color: #e74c3c;
-  color: #fff;
-}
-.like-button:active:not(:disabled) {
-  transform: scale(0.95);
-}
-.like-button:disabled {
-  opacity: 0.6;
-  cursor: default;
-  background-color: #e74c3c;
-  color: #fff;
-}
-
-
