@@ -794,3 +794,22 @@ footer {
   100% { transform: translate(-50%, -50%) rotate(0deg); }
 }
 
+/* 1) 기본 하트(outline) 스타일: 빈 하트 */
+.like-button .heart-icon path {
+  fill: none;                    /* 내부 투명 */
+  stroke: var(--text-light);     /* 테두리 색상 */
+  stroke-width: 2;               /* 테두리 두께 */
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+/* 2) disabled 상태일 때만 채워진 하트 */
+.like-button:disabled .heart-icon path {
+  stroke: none;                  /* 테두리 숨기기 */
+  fill: var(--primary-red);      /* 채워진 빨간 하트 */
+}
+
+/* 3) hover 효과—disabled 전용이 아님 */
+.like-button:not(:disabled):hover .heart-icon path {
+  stroke: var(--primary-red);    /* 호버 시 테두리 빨강 */
+  transform: scale(1.1);
+}
