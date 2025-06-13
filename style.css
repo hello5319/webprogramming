@@ -779,6 +779,9 @@ footer {
   box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
   background-color: black;
   z-index: 9999;
+}
+
+.fullscreen-popup.shake {
   animation: shake 0.5s infinite;
 }
 
