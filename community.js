@@ -86,19 +86,27 @@ document.addEventListener("DOMContentLoaded", () => {
           <span>게시판: ${data.board}</span> |
           <span>작성자: ${data.nickname}</span>
         </div>
-        <h2>${data.title}</h2>
+        <h2 class="post-title">${data.title}</h2>
         <div class="post-body">${data.detail}</div>
-        <div style="margin:1.5rem 0;">
-          <button id="likeButton">❤️ 좋아요 (${data.likes})</button>
+        <div class="post-actions" style="margin:1.5rem 0;">
+          <button id="likeButton" class="like-button">
+            <svg class="heart-icon" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4…"/>
+            </svg>
+            <span id="likeCount">좋아요 ${data.likes}개</span>
+          </button>
         </div>
         <hr />
-        <div id="commentsSection">
+        <div class="comments-section" id="commentsSection">
           <h3>댓글</h3>
-          <div id="commentList"></div>
-          <textarea id="commentInput" placeholder="댓글을 입력하세요"></textarea>
-          <button id="addCommentButton">댓글 작성</button>
+          <div id="commentList" class="comment-list"></div>
+          <form id="commentForm" class="comment-form">
+            <textarea id="commentInput" placeholder="댓글을 입력하세요..." required></textarea>
+            <button type="submit">작성</button>
+          </form>
         </div>
       `;
+
 
       // ── 5-1. 수정·삭제 버튼 영역 추가 ──────────────────────────────────────────────
       const actionsDiv = document.createElement("div");
