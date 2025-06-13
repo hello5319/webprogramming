@@ -795,7 +795,7 @@ footer {
 }
 
 /* 공통 좋아요 버튼 스타일 */
-#likeButton {
+.like-button {
   background: transparent;
   border: 2px solid #e74c3c;
   color: #e74c3c;
@@ -808,23 +808,18 @@ footer {
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s, transform 0.1s;
 }
-
-/* 호버 시 내부 채워진 느낌 */
-#likeButton:hover:not(:disabled) {
+.like-button:hover:not(:disabled) {
   background-color: #e74c3c;
   color: #fff;
 }
-
-/* 클릭(활성) 이펙트 */
-#likeButton:active:not(:disabled) {
+.like-button:active:not(:disabled) {
   transform: scale(0.95);
 }
-
-/* disabled 상태 (이미 좋아요 누른 후) */
-#likeButton:disabled {
+.like-button:disabled {
   opacity: 0.6;
   cursor: default;
   background-color: #e74c3c;
   color: #fff;
 }
+
 
