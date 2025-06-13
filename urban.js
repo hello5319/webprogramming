@@ -398,7 +398,7 @@ export const urbanData = [
             유이는 말없이 마지막 칸 앞에 섰다.
             그리고 조용히 이름을 불렀다.
             \n
-            <span class="click-image" data-img="image/urban1.webp">"하나코야, 놀자."</span>
+            <span class="click-image" data-img="image/urban1.webp" shake="false">"하나코야, 놀자."</span>
             "하나코야, 놀자."\n
             "하나코야, 놀자."
             \n
