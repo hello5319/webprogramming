@@ -235,8 +235,8 @@ document.addEventListener("click", (e) => {
       <div style="color:#e01c1c;font-size:1rem;margin-bottom:0.8rem;">공포 난이도: ${renderLevelStars(data.level)}</div>
       <div class="urban-item-body" style="margin-top:1.2rem; font-size:1.1rem; line-height:1.7;">${data.detail}</div>
 
-      <div class="like-section" style="margin-top: 1rem;">
-        <button id="likeBtn">❤️ 좋아요</button> <span id="likeCount">0</span>
+      <div class="post-actions" style="margin:1.5rem 0;">
+        <button id="likeButton" class="like-button">❤️ 좋아요 (${data.likes})</button>
       </div>
 
       <div class="comment-section" style="margin-top:2rem;">
