@@ -228,6 +228,23 @@ nav {
   white-space: pre-line;
 }
 
+/* 클릭 힌트 스타일 */
+.click-hint {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.4rem;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 0.3rem;
+  animation: blink 1.2s infinite alternate;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to   { opacity: 0.4; }
+}
 
 /* ------ community(커뮤니티) ------ */
 .community-header {
