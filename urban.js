@@ -188,9 +188,6 @@ function setupCommentSection(postId) {
 }
 
 function renderUrbanDetail(id) {
-  document.getElementById('mainTitle')?.classList.add('hide-on-detail');
-  document.getElementById('sortButtons')?.classList.add('hide-on-detail');
-  
   const urbanList = document.getElementById('urbanList');
   const data = urbanData.find(item => item.id === id);
   if (!data) return;
@@ -238,9 +235,6 @@ function renderUrbanDetail(id) {
 
   // “목록으로” 클릭 시 뒤로가기
   document.querySelector('.urban-back-btn').addEventListener('click', () => {
-    document.getElementById('mainTitle')?.classList.remove('hide-on-detail');
-    document.getElementById('sortButtons')?.classList.remove('hide-on-detail');
-
     window.history.back();
   });
 
