@@ -194,6 +194,26 @@ function renderUrbanDetail(id) {
   const titleElem = document.querySelector('.urban-title');
   if (titleElem) titleElem.textContent = data.title;
 
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("click-image")) {
+    const imgUrl = e.target.getAttribute("data-img");
+    const shouldShake = e.target.getAttribute("data-shake") === "true";
+
+    const popup = document.createElement("div");
+    popup.className = "fullscreen-popup";
+
+    if (shouldShake) {
+      popup.classList.add("shake");
+    }
+
+    popup.style.backgroundImage = `url(${imgUrl})`;
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+      popup.remove();
+    }, 2500);
+  }
+});
   // 상세 뷰 HTML + 오디오 버튼 & <audio> 태그 포함
   urbanList.innerHTML = `
     <div class="product-card urban-item urban-detail" style="width:100%;max-width:1200px;margin:0 auto; position: relative;">
