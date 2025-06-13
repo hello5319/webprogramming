@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <svg class="heart-icon" viewBox="0 0 24 24">
               <path d="M12 21.35l-1.45-1.32C5.4…"/>
             </svg>
-            <span id="likeCount">좋아요 ${data.likes}개</span>
+            <span id="likeCount">❤️ 좋아요 ${data.likes}개</span>
           </button>
         </div>
         <hr />
@@ -104,6 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <textarea id="commentInput" placeholder="댓글을 입력하세요..." required></textarea>
             <button type="submit">작성</button>
           </form>
+          <div class="comment-form">
+            <textarea id="commentInput" …></textarea>
+            <button id="addCommentButton" type="button">작성</button>
+          </div>
         </div>
       `;
 
