@@ -81,38 +81,81 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 상세 HTML 구성 (수정·삭제 버튼은 별도 div에 그릴 예정)
       postDetailContainer.innerHTML = `
-  <div class="post-meta">
-    <span>작성일: ${data.date}</span> |
-    <span>게시판: ${data.board}</span> |
-    <span>작성자: ${data.nickname}</span>
-  </div>
-  <h2 class="post-title">${data.title}</h2>
-  <div class="post-body">${data.detail}</div>
-
-  <div class="post-actions" style="margin:1.5rem 0;">
-    <button id="likeButton" class="like-button">
-      <svg class="heart-icon" viewBox="0 0 24 24">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
-                 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5
-                 2.09C13.09 3.81 14.76 3 16.5 3
-                 19.58 3 22 5.42 22 8.5c0
-                 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-      <span id="likeCount">좋아요 ${data.likes}개</span>
-    </button>
-  </div>
-
-  <hr />
-
-  <div class="comments-section" id="commentsSection">
-    <h3>댓글</h3>
-    <div id="commentList" class="comment-list"></div>
-    <form id="commentForm" class="comment-form">
-      <textarea id="commentInput" placeholder="댓글을 입력하세요..." required></textarea>
-      <button type="submit">작성</button>
-    </form>
-  </div>
-`;
+        <div class="post-meta">
+          <span>작성일: ${data.date}</span> |
+          <span>게시판: ${data.board}</span> |
+          <span>작성자: ${data.nickname}</span>
+        </div>
+        <h2 class="post-title">${data.title}</h2>
+        <div class="post-body">${data.detail}</div>
+      
+        <div class="post-actions" style="margin:1.5rem 0;">
+          <button id="likeButton" class="like-button">
+            <svg class="heart-icon" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                       2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5
+                       2.09C13.09 3.81 14.76 3 16.5 3
+                       19.58 3 22 5.42 22 8.5c0
+                       3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            <span id="likeCount">좋아요 ${data.likes}개</span>
+          </button>
+        </div>
+      
+        <hr />
+      
+        <div class="comments-section" id="commentsSection">
+          <h3>댓글</h3>
+          <div id="commentList" class="comment-list"></div>
+          <form id="commentForm" class="comment-form">
+            <textarea id="commentInput" placeholder="댓글을 입력하세요..." required></textarea>
+            <button type="submit">작성</button>
+          </form>
+        </div>
+      `;
+      
+      
+            // 좋아요
+      document.getElementById('likeButton').addEventListener('click', async () => {
+        const newCount = await updateLikesInFirebase(postId);
+        document.getElementById('likeCount').textContent = `좋아요 ${newCount}개`;
+      });
+      
+      // 댓글 렌더링 함수
+      function renderComments(comments) {
+        const listEl = document.getElementById('commentList');
+        listEl.innerHTML = '';
+        if (!comments.length) {
+          listEl.innerHTML = '<div class="no-comments">댓글이 없습니다. 첫 댓글을 달아보세요.</div>';
+          return;
+        }
+        comments.forEach(c => {
+          const item = document.createElement('div');
+          item.className = 'comment-item';
+          item.innerHTML = `
+            <div class="comment-meta">
+              <span class="comment-author">${c.author}</span> |
+              <span class="comment-date">${c.date}</span>
+            </div>
+            <div class="comment-text">${c.text}</div>
+          `;
+          listEl.appendChild(item);
+        });
+      }
+      
+      // 초기 댓글 표시
+      renderComments(postData.comments);
+      
+      // 댓글 작성
+      document.getElementById('commentForm').addEventListener('submit', async e => {
+        e.preventDefault();
+        const text = document.getElementById('commentInput').value.trim();
+        if (!text) return;
+        const newComment = await addCommentToFirebase(postId, text);
+        postData.comments.push(newComment);
+        renderComments(postData.comments);
+        e.target.reset();
+      });
 
       // ── 5-1. 수정·삭제 버튼 영역 추가 ──────────────────────────────────────────────
       const actionsDiv = document.createElement("div");
