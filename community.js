@@ -81,38 +81,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 상세 HTML 구성 (수정·삭제 버튼은 별도 div에 그릴 예정)
       postDetailContainer.innerHTML = `
-        <div class="post-detail">
-          <!-- 메타 정보 -->
-          <div class="post-meta">
-            <span>작성일: ${data.date}</span> |
-            <span>게시판: ${data.board}</span> |
-            <span>작성자: ${data.nickname}</span>
-          </div>
-      
-          <!-- 제목 -->
-          <h2 class="post-title">${data.title}</h2>
-      
-          <!-- 본문 -->
-          <div class="post-body">${data.detail}</div>
-      
-          <!-- 좋아요 + (추후) 수정·삭제 버튼 -->
-          <div class="post-actions" style="margin:1.5rem 0; display:flex; gap:1rem;">
-            <button id="likeButton" class="like-btn">❤️ 좋아요 (${data.likes})</button>
-            <div id="editDeleteButtons" class="action-buttons"></div>
-          </div>
-      
-          <hr/>
-      
-          <!-- 댓글 섹션 -->
-          <div id="commentsSection" class="comments-section">
-            <h3>댓글</h3>
-            <div id="commentList"></div>
-            <textarea id="commentInput" placeholder="댓글을 입력하세요"></textarea>
-            <button id="addCommentButton">댓글 작성</button>
-          </div>
+        <div class="post-meta">
+          <span>작성일: ${data.date}</span> |
+          <span>게시판: ${data.board}</span> |
+          <span>작성자: ${data.nickname}</span>
+        </div>
+        <h2>${data.title}</h2>
+        <div class="post-body">${data.detail}</div>
+        <div style="margin:1.5rem 0;">
+          <button id="likeButton">❤️ 좋아요 (${data.likes})</button>
+        </div>
+        <hr />
+        <div id="commentsSection">
+          <h3>댓글</h3>
+          <div id="commentList"></div>
+          <textarea id="commentInput" placeholder="댓글을 입력하세요"></textarea>
+          <button id="addCommentButton">댓글 작성</button>
         </div>
       `;
-
 
       // ── 5-1. 수정·삭제 버튼 영역 추가 ──────────────────────────────────────────────
       const actionsDiv = document.createElement("div");
