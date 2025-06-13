@@ -107,12 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="comments-section" id="commentsSection">
           <h3>댓글</h3>
           <div id="commentList" class="comment-list"></div>
-          <form id="commentForm" class="comment-form">
-            <textarea id="commentInput" placeholder="댓글을 입력하세요..." required></textarea>
-            <button type="submit">작성</button>
-          </form>
+          <div class="comment-form">
+            <textarea id="commentInput" placeholder="댓글을 입력하세요..."></textarea>
+            <button id="addCommentButton" type="button" class="comment-submit-button">
+              작성
+            </button>
+          </div>
         </div>
-      `;
+       `;
       
       
             // 좋아요
