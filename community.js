@@ -81,24 +81,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 상세 HTML 구성 (수정·삭제 버튼은 별도 div에 그릴 예정)
       postDetailContainer.innerHTML = `
-        <div class="post-meta">
-          <span>작성일: ${data.date}</span> |
-          <span>게시판: ${data.board}</span> |
-          <span>작성자: ${data.nickname}</span>
-        </div>
-        <h2>${data.title}</h2>
-        <div class="post-body">${data.detail}</div>
-        <div style="margin:1.5rem 0;">
-          <button id="likeButton">❤️ 좋아요 (${data.likes})</button>
-        </div>
-        <hr />
-        <div id="commentsSection">
-          <h3>댓글</h3>
-          <div id="commentList"></div>
-          <textarea id="commentInput" placeholder="댓글을 입력하세요"></textarea>
-          <button id="addCommentButton">댓글 작성</button>
-        </div>
-      `;
+  <div class="post-meta">
+    <span>작성일: ${data.date}</span> |
+    <span>게시판: ${data.board}</span> |
+    <span>작성자: ${data.nickname}</span>
+  </div>
+  <h2 class="post-title">${data.title}</h2>
+  <div class="post-body">${data.detail}</div>
+
+  <div class="post-actions" style="margin:1.5rem 0;">
+    <button id="likeButton" class="like-button">
+      <svg class="heart-icon" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                 2 5.42 4.42 3 7.5 3c1.74 0 3.41 0.81 4.5
+                 2.09C13.09 3.81 14.76 3 16.5 3
+                 19.58 3 22 5.42 22 8.5c0
+                 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+      <span id="likeCount">좋아요 ${data.likes}개</span>
+    </button>
+  </div>
+
+  <hr />
+
+  <div class="comments-section" id="commentsSection">
+    <h3>댓글</h3>
+    <div id="commentList" class="comment-list"></div>
+    <form id="commentForm" class="comment-form">
+      <textarea id="commentInput" placeholder="댓글을 입력하세요..." required></textarea>
+      <button type="submit">작성</button>
+    </form>
+  </div>
+`;
 
       // ── 5-1. 수정·삭제 버튼 영역 추가 ──────────────────────────────────────────────
       const actionsDiv = document.createElement("div");
