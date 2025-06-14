@@ -8,13 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     intro: {
       title: '',
       body: `
-        <main class="site-intro">
-          <!-- 히어로 섹션 -->
-          <section class="intro-hero">
-            <h1>괴담지옥란</h1>
-            <p>소름 돋는 괴담과 실화를 모아, 당신의 밤을 더욱 짜릿하게 만들어 줄 공포 허브</p>
-          </section>
-        
           <!-- 사이트 소개 -->
           <section class="intro-about">
             <h2>🕯️ 우리 사이트는…</h2>
