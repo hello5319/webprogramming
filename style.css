@@ -398,11 +398,12 @@ nav {
 }
 
 /*login.html 로그인 폼 디자인*/
-/* ── 로그인/회원가입 섹션 전체 스타일 ── */
+/* ── authSection: 그리드 레이아웃 & 충분한 간격 ── */
 #authSection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;                     /* 행·열 모두 1rem 간격 */
+  column-gap: 1rem;      /* 버튼 사이 가로 간격 */
+  row-gap: 1.5rem;       /* 요소들 사이 세로 간격 */
   max-width: 360px;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -411,17 +412,16 @@ nav {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* ── 입력창 (이메일·비밀번호·닉네임) ── */
+/* ── 입력창은 항상 전체 너비 ── */
 #authSection input {
-  grid-column: 1 / -1;           /* 한 줄 전체 너비 */
+  grid-column: 1 / -1;
   width: 100%;
-  padding: 0.6rem 0.8rem;
+  padding: 0.8rem 1rem;
   background: #444;
   border: 1px solid #555;
   border-radius: 0.4rem;
   color: #f1f1f1;
   font-size: 1rem;
-  box-sizing: border-box;
   transition: border-color 0.2s;
 }
 #authSection input:focus {
@@ -429,15 +429,18 @@ nav {
   border-color: #e74c3c;
 }
 
-/* ── 회원가입 · 로그인 버튼 나란히 배치 ── */
-#signUpBtn {
-  grid-column: 1 / 2;
-}
+/* ── 로그인 · 회원가입 버튼 배치 ── */
 #signInBtn {
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;   /* 왼쪽 칸 */
 }
+#signUpBtn {
+  grid-column: 2 / 3;   /* 오른쪽 칸 */
+}
+
+/* ── 버튼 공통 스타일 ── */
 #authSection button {
-  padding: 0.7rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
   background: #e74c3c;
   color: #fff;
   border: none;
@@ -453,10 +456,11 @@ nav {
   transform: scale(0.97);
 }
 
-/* ── 로그아웃 버튼 (인라인 display:none) 완전 숨김 ── */
+/* ── 로그아웃 버튼 완전 숨김 ── */
 #authSection button[style*="display: none"] {
   display: none !important;
 }
+
 
 /* ------ 홈(main-section, slider 등) ------ */
 .main-section {
