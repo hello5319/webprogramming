@@ -563,7 +563,7 @@ export const urbanData = [
         </section>
       </div>
     `
-  }
+  },
   {
     id: 5,
     title: '석류나무 옆 담벼락',
