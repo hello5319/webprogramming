@@ -513,7 +513,7 @@ nav {
 
 /* ── 입력창 ── */
 #authSection input {
-  width: 95%;
+  width: 90%;
   padding: 0.8rem 1rem;
   background: #444;
   border: 1px solid #555;
