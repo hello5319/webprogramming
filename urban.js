@@ -221,6 +221,12 @@ function setupCommentSection(postId) {
 }
 
 function renderUrbanDetail(id) {
+  const titleHeader = document.querySelector("h1");
+  const sortButtons = document.querySelector(".urban-sort-buttons");
+
+  if (titleHeader) titleHeader.style.display = "none";
+  if (sortButtons) sortButtons.style.display = "none";
+  
   const urbanList = document.getElementById('urbanList');
   const data = urbanData.find(item => item.id === id);
   if (!data) return;
@@ -299,11 +305,6 @@ document.addEventListener("click", (e) => {
       </button>
     </div>
   `;
-
-  const headerTitle = document.querySelector(".urban-header h2");
-  const sortButtons = document.querySelector(".sort-buttons");
-  if (headerTitle) headerTitle.remove();
-  if (sortButtons) sortButtons.remove();
   
   // “목록으로” 클릭 시 뒤로가기
   document.querySelector('.urban-back-btn').addEventListener('click', () => {
@@ -855,17 +856,6 @@ async function renderUrbanList(sortType, filterType) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const isDetailMode = urlParams.get("id"); // 괴담 상세 페이지인지 확인
-  
-  if (isDetailMode) {
-    const headerTitle = document.querySelector(".urban-header h2");
-    const sortButtons = document.querySelector(".sort-buttons");
-    if (headerTitle) headerTitle.style.display = "none";
-    if (sortButtons) sortButtons.style.display = "none";
-  }
-
   if (document.getElementById('urbanList')) {
     let sortType = 'latest';
     let filterType = getParamFromURL('filter') || 'all';
