@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `
     },
     greeting: {
-      title: '운영자 인사말',
+      title: '',
       body: `
             <section style="max-width: 900px; margin: 3rem auto; padding: 2rem; background-color: #111; border-radius: 1rem; box-shadow: 0 0 15px rgba(255, 0, 0, 0.15); color: #eee; line-height: 1.7; font-size: 1.05rem;">
               <h2 style="font-size: 1.6rem; margin-bottom: 1.2rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">👻 운영자 인사말</h2>
@@ -113,8 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     contact: {
       title: '문의/제보하기',
-      body: `문의사항이나 괴담 제보는 아래 이메일로 보내주세요.<br>
-             <strong>contact@ghojamhell.com</strong>`
+      body: `
+      <div style="margin-top: 2.5rem; padding: 1.2rem 1.5rem; background-color: #111; border-left: 4px solid crimson; border-radius: 0.5rem; box-shadow: 0 0 10px rgba(255,0,0,0.2); color: #eee; font-size: 1.05rem; line-height: 1.6;">
+        문의사항이나 괴담 제보는 아래 이메일로 보내주세요.<br>
+        <strong style="color: #ff4d4d; font-size: 1.1rem;">webprogram25@gmail.com</strong>
+      </div>
+  `
     }
   };
 
