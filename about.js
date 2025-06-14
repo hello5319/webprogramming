@@ -7,31 +7,71 @@ document.addEventListener('DOMContentLoaded', () => {
   const contentMap = {
     intro: {
       title: '사이트 소개',
-      body: `<p>괴담지옥은 단순한 이야기 제공을 넘어 사용자 참여형 콘텐츠를 통한 특별한 경험을 제공하는 사이트입니다.</p>
-      <ul>
-        <li>
-          📚 <strong>다양한 장르</strong>: 한국 괴담부터 해외 괴담, 실화 기반 이야기, 사용자 제보 괴담까지 폭넓게 수집<br>
-          <img src="image/photo-genre.webp" alt="다양한 장르 사진" class="intro-photo">
-        </li>
-        <li>
-          🖋️ <strong>사용자 참여</strong>: 직접 체험한 기이한 경험이나 지역 괴담을 제보하고, 커뮤니티 기능를 통한 사용자 간의 소통<br>
-          <img src="image/photo-user.webp" alt="사용자 참여 사진" class="intro-photo">
-        </li>
-        <li>
-          🔊 <strong>몰입형 오디오</strong>: 공포 배경음과 각 스토리에 어울리는 음성 내레이션으로 생생한 공포 분위기 제공<br>
-          <img src="image/photo-audio.webp" alt="몰입형 오디오 사진" class="intro-photo">
-        </li>
-        <li>
-          🗂️ <strong>큐레이션 & 분류</strong>: 주제별, 난이도별로 정리된 스토리 목록으로 빠르고 손쉬운 탐색<br>
-          <img src="image/photo-curation.webp" alt="큐레이션 & 분류 사진" class="intro-photo">
-        </li>
-        <li>
-          🌐 <strong>실시간 소통</strong>: 댓글, 좋아요 기능으로 다른 이용자와 감상평 교류, 인기 콘텐츠 랭킹 제공<br>
-          <img src="image/photo-community.webp" alt="실시간 소통 사진" class="intro-photo">
-        </li>
-      </ul>
-      <p>매주 새로운 괴담이 업데이트되며, 운영자가 엄선한 추천 목록을 통해 잊지 못할 공포 체험을 선사합니다.<br>
-         공포를 좋아하는 사람이라면 누구나 지금 바로 괴담지옥에서 여러분만의 무서운 이야기를 찾아보세요!</p>`
+      body: `
+        <main class="site-intro">
+          <!-- 히어로 섹션 -->
+          <section class="intro-hero">
+            <h1>👻 괴담지옥에 오신 것을 환영합니다</h1>
+            <p>세계 곳곳의 소름 돋는 괴담과 실화를 모아, 당신의 밤을 더욱 짜릿하게 만들어 줄 공포 허브</p>
+          </section>
+        
+          <!-- 사이트 소개 -->
+          <section class="intro-about">
+            <h2>🕯️ 우리 사이트는…</h2>
+            <p>
+              괴담지옥은 단순한 이야기 모음이 아닙니다.  
+              한국 괴담부터 해외 괴담, 실제 목격담까지  
+              <strong>다양한 공포 스펙트럼</strong>을 꿰뚫어,  
+              <em>‘진짜 소름’</em>을 선사하는 공간이에요.
+            </p>
+          </section>
+        
+          <!-- 주요 기능 -->
+          <section class="intro-features">
+            <h2>🔍 주요 기능</h2>
+            <ul class="features-list">
+              <li>
+                <span class="feature-image" data-img="image/genre.jpg"></span>
+                <strong>다양한 장르</strong><br>
+                한국 괴담·해외 괴담·실화 이야기·사용자 제보까지  
+                <em>모든 공포 장르를 한눈에.</em>
+              </li>
+              <li>
+                <span class="feature-image" data-img="image/submit.jpg"></span>
+                <strong>사용자 제보</strong><br>
+                당신이 직접 경험한 기이한 사건도  
+                <em>언제든 제보</em>하고 공유할 수 있어요.
+              </li>
+              <li>
+                <span class="feature-image" data-img="image/audio.jpg"></span>
+                <strong>몰입형 오디오</strong><br>
+                공포 내레이터와 배경음악으로  
+                <em>현장감 100%</em>를 느껴보세요.
+              </li>
+              <li>
+                <span class="feature-image" data-img="image/curation.jpg"></span>
+                <strong>큐레이션 & 분류</strong><br>
+                주제·난이도·인기 필터로  
+                <em>내 취향에 딱 맞는 이야기</em>만 쏙쏙.
+              </li>
+              <li>
+                <span class="feature-image" data-img="images/community.jpg"></span>
+                <strong>실시간 소통</strong><br>
+                댓글·좋아요로  
+                <em>다양한 사용자들과</em> 즐겨보세요.
+              </li>
+            </ul>
+          </section>
+        
+          <!-- 참여 유도 -->
+          <section class="intro-cta">
+            <h2>😈 지금 바로 체험해 보세요!</h2>
+            <p>방을 어둡게 하고, 헤드폰을 끼워 보세요.  
+               괴담지옥이 준비한 무서운 밤이 시작됩니다.</p>
+            <a href="community.html?board=free" class="btn btn-primary">자유게시판으로 가기</a>
+          </section>
+        </main>
+      `
     },
     greeting: {
       title: '운영자 인사말',
