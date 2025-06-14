@@ -400,10 +400,10 @@ nav {
 /*login.html 로그인 폼 디자인*/
 /* ── 로그인/회원가입 섹션 재정의 ── */
 #authSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* 두 개 열 */
-  row-gap: 1.5rem;                 /* 위아래 간격 */
-  column-gap: 1rem;                /* 버튼 사이 가로 간격 */
+  display: grid !important;          /* flex 제거, grid 적용 */
+  grid-template-columns: 1fr 1fr;     /* 2열 */
+  row-gap: 1.5rem;                    /* 위아래 간격 */
+  column-gap: 1rem;                   /* 좌우 간격 */
   max-width: 360px;
   margin: 2rem auto;
   padding: 2rem;
@@ -412,7 +412,7 @@ nav {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* 입력창은 두 열 모두 차지 */
+/* 입력창(이메일·비번·닉네임)은 2열 전체 차지 */
 #authSection input {
   grid-column: 1 / -1;
   width: 100%;
@@ -429,9 +429,13 @@ nav {
   border-color: #e74c3c;
 }
 
-/* 로그인·회원가입 버튼 위치 지정 */
-#signInBtn { grid-column: 1 / 2; }  /* 왼쪽 칸 */
-#signUpBtn { grid-column: 2 / 3; }  /* 오른쪽 칸 */
+/* 로그인(왼쪽) · 회원가입(오른쪽) 버튼 배치 */
+#signInBtn {
+  grid-column: 1 / 2;  /* 왼쪽 칸 */
+}
+#signUpBtn {
+  grid-column: 2 / 3;  /* 오른쪽 칸 */
+}
 
 /* 버튼 공통 스타일 */
 #authSection button {
@@ -456,6 +460,7 @@ nav {
 #authSection button[style*="display: none"] {
   display: none !important;
 }
+
 
 
 
