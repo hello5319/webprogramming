@@ -414,8 +414,8 @@ nav {
 /* 사진 스타일 */
 .intro-photo {
   flex-shrink: 0;
-  width: 120px;        /* 원하는 가로 크기 */
-  height: 80px;        /* 원하는 세로 크기 */
+  width: 300px;        /* 원하는 가로 크기 */
+  height: 180px;        /* 원하는 세로 크기 */
   object-fit: cover;   /* 사진 비율 유지하며 잘라냄 */
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.4);
