@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div id="commentList" style="display: flex; flex-direction: column; gap: 1rem;"></div>
           <div style="display: flex; flex-direction: column; margin-top: 2rem;">
             <textarea id="commentInput" placeholder="댓글을 입력하세요"
-              style="width: 90%; min-height: 100px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; resize: vertical;"></textarea>
+              style="width: 95%; min-height: 100px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; resize: vertical;"></textarea>
             <div style="display: flex; justify-content: flex-end; margin-top: 0.5rem;">
               <button id="addCommentButton" style="padding: 0.5rem 1rem; border: none; border-radius: 6px; background-color: #222; color: white; cursor: pointer;">댓글 작성</button>
             </div>
