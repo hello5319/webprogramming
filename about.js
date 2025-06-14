@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>🔍 주요 기능</h2>
             <ul class="features-list">
               <li>
-                <span class="feature-image" data-img="image/photo-genre.webp"></span>
+                <span class="feature-image" data-img="image/photo-genre.webp" alt="장르 사진"></span>
                 <strong>다양한 장르</strong><br>
                 한국 괴담·해외 괴담·실화 이야기·사용자 제보까지  
                 <em>모든 공포 장르를 한눈에.</em>
