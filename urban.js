@@ -302,8 +302,8 @@ document.addEventListener("click", (e) => {
 
   const headerTitle = document.querySelector(".urban-header h2");
   const sortButtons = document.querySelector(".sort-buttons");
-  if (headerTitle) headerTitle.style.display = "none";
-  if (sortButtons) sortButtons.style.display = "none";
+  if (headerTitle) headerTitle.remove();
+  if (sortButtons) sortButtons.remove();
   
   // “목록으로” 클릭 시 뒤로가기
   document.querySelector('.urban-back-btn').addEventListener('click', () => {
