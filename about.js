@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <!-- 히어로 섹션 -->
           <section class="intro-hero">
             <h1>👻 괴담지옥에 오신 것을 환영합니다</h1>
-            <p>세계 곳곳의 소름 돋는 괴담과 실화를 모아, 당신의 밤을 더욱 짜릿하게 만들어 줄 공포 허브</p>
+            <p>소름 돋는 괴담과 실화를 모아, 당신의 밤을 더욱 짜릿하게 만들어 줄 공포 허브</p>
           </section>
         
           <!-- 사이트 소개 -->
@@ -21,8 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>
               괴담지옥은 단순한 이야기 모음이 아닙니다.  
               한국 괴담부터 해외 괴담, 실제 목격담까지  
-              <strong>다양한 공포 스펙트럼</strong>을 꿰뚫어,  
-              <em>‘진짜 소름’</em>을 선사하는 공간이에요.
+              <strong>다양한 공포 스펙트럼</strong>과,
+              <strong>사용자 참여형 콘텐츠</strong>를 통해
+              <em>‘특별한 경험’</em> 을 선사하는 공간이에요.
             </p>
           </section>
         
