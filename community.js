@@ -67,9 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── 5. 상세보기 모드 ─────────────────────────────────────────────────────────────
   if (postId) {
-    // 나머지 UI 숨기기
-    [boardSelectorSection, showWriteFormBtn, writeForm, communityHeader, communityList]
-      .forEach(el => el && (el.style.display = "none"));
+  // 나머지 UI 숨기기
+  [boardSelectorSection, showWriteFormBtn, writeForm, communityHeader, communityList]
+    .forEach(el => el && (el.style.display = "none"));
+
+  // ✅ 정렬 버튼 숨기기 추가
+  sortButtons.forEach(btn => btn.style.display = "none");
 
     // 게시글 가져와 렌더링
     getDoc(doc(db, "communityPosts", postId)).then(async snap => {
