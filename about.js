@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <main class="site-intro">
           <!-- 히어로 섹션 -->
           <section class="intro-hero">
-            <h1>👻 괴담지옥에 오신 것을 환영합니다</h1>
+            <h1>괴담지옥란</h1>
             <p>소름 돋는 괴담과 실화를 모아, 당신의 밤을 더욱 짜릿하게 만들어 줄 공포 허브</p>
           </section>
         
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
           <!-- 참여 유도 -->
           <section class="intro-cta">
-            <h2>😈 지금 바로 체험해 보세요!</h2>
+            <h2>지금 바로 체험해 보세요!</h2>
             <p>방을 어둡게 하고, 헤드폰을 끼워 보세요.  
                괴담지옥이 준비한 무서운 밤이 시작됩니다.</p>
             <a href="urban.html?filter=all" class="btn btn-primary">전체 괴담 보기</a>
