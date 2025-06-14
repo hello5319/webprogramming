@@ -1,4 +1,3 @@
-
 // ✅ urban.js: 괴담 목록, 상세보기, 좋아요 및 댓글 기능 포함 + Firebase 유저 닉네임 반영 (댓글 예외처리 추가) + 오디오 기능
 
 import {
@@ -53,11 +52,9 @@ function renderLevelStars(level) {
 function setupLikeButton(postId) {
   const likeBtn = document.getElementById('likeBtn');
   const likeCount = document.getElementById('likeCount');
-
   if (!likeBtn || !likeCount) return;
 
   const postRef = doc(db, 'urbanLikes', String(postId));
-
   getDoc(postRef).then(docSnap => {
     const data = docSnap.exists() ? docSnap.data() : { count: 0, users: [] };
     likeCount.textContent = data.count || 0;
@@ -68,21 +65,48 @@ function setupLikeButton(postId) {
         return;
       }
       const uid = currentUser.uid;
-      const alreadyLiked = data.users?.includes(uid);
-
-      if (alreadyLiked) {
+      if (data.users?.includes(uid)) {
         alert('이미 좋아요를 누르셨습니다');
         return;
       }
-
       data.count = (data.count || 0) + 1;
       data.users = [...(data.users || []), uid];
-
       await setDoc(postRef, data);
       likeCount.textContent = data.count;
     });
   });
+
+  // ✅ 좋아요 버튼에 CSS 스타일 추가
+  Object.assign(likeBtn.style, {
+    backgroundColor: '#e01c1c',
+    color: '#ffffff',
+    border: 'none',
+    padding: '0.4rem 0.8rem',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    fontSize: '1rem',
+    boxShadow: '0 3px 6px rgba(0,0,0,0.15)',
+    transition: 'transform 0.1s ease, background-color 0.2s ease'
+  });
+
+  likeBtn.addEventListener('mouseenter', () => {
+    likeBtn.style.backgroundColor = '#c41818';
+  });
+
+  likeBtn.addEventListener('mouseleave', () => {
+    likeBtn.style.backgroundColor = '#e01c1c';
+    likeBtn.style.transform = 'scale(1)';
+  });
+
+  likeBtn.addEventListener('mousedown', () => {
+    likeBtn.style.transform = 'scale(0.95)';
+  });
+
+  likeBtn.addEventListener('mouseup', () => {
+    likeBtn.style.transform = 'scale(1)';
+  });
 }
+
 
 async function getUserNickname(uid) {
   try {
