@@ -960,14 +960,14 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vw;
+  width: 45vw;
   max-width: 1000px;
-  height: 120vh;
+  height: 70vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border: 4px solid #e01c1c;
-  border-radius: 12px;
+  border-radius: 3px;
   box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
   background-color: black;
   z-index: 9999;
