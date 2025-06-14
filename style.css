@@ -497,6 +497,69 @@ nav {
   transform: scale(0.97);
 }
 
+/*login.html 디자인*/
+/* ── authSection 전체 레이아웃 ── */
+#authSection {
+  max-width: 360px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #2a2a2a;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;            /* 요소 간 세로 간격 */
+}
+
+/* ── 입력창 ── */
+#authSection input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: #444;
+  border: 1px solid #555;
+  border-radius: 0.4rem;
+  color: #f1f1f1;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+#authSection input:focus {
+  outline: none;
+  border-color: #e74c3c;
+}
+
+/* ── 버튼 그룹 ── */
+.button-group {
+  display: flex;
+  gap: 1rem;              /* 버튼 사이 간격 */
+}
+.button-group button {
+  flex: 1;                /* 동일한 너비 */
+}
+
+/* ── 버튼 공통 스타일 ── */
+#authSection button {
+  padding: 0.8rem 1rem;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+#authSection button:hover {
+  background: #c0392b;
+}
+#authSection button:active {
+  transform: scale(0.97);
+}
+
+/* ── 로그아웃 버튼 완전 숨김 ── */
+#authSection button[style*="display:none"] {
+  display: none !important;
+}
+
+
 /* ------ 홈(main-section, slider 등) ------ */
 .main-section {
   max-width: 1200px;
