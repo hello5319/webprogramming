@@ -390,7 +390,7 @@ export const urbanData = [
         <p>그런데 그날 밤, 또 <strong>쿵쿵쿵쿵...</strong> 소리가 들렸어요. 다음날도 똑같았어요.</p>
         <p>아빠가 아침·저녁 두 번 다 가봤는데, 아무도 안 나오는 거예요.</p>
         <p>결국 그날 저녁엔 아빠가 진짜 열 받아서 문을 쿵쿵 노크하며 소리를 지렀대요.</p>
-        <p>"저기요!! 거기 아무도 없어요?!!!"</p>
+        <p><span class="click-image" data-img="image/urban1_door.webp" data-shake="false">"저기요!! 거기 아무도 없어요?!!!"</span><span class="click-hint"><- 클릭!</span></p>
         <p>그랬더니 앞집 사람이 나와서 그러더래요. "거기 아무도 안 산 지 좀 됐어요..."</p>
         <p>근데 그날 밤에도... 또 <strong>쿵쿵쿵쿵...</strong> 소리가 났어요. 정말 이상했죠.</p>
       </section>
@@ -411,7 +411,7 @@ export const urbanData = [
         <p>그래도 그냥 보내긴 뭐하니까, 엄마가 “음료라도 한 잔 하고 가세요” 하고 우리 집으로 모셔왔죠.</p>
         <p>그런데 무당 아저씨가 집에 들어오자마자... 코피를 주르륵 흘리셨대요.</p>
         <p>그리고 갑자기 말씀하셨대요. “최대한 빨리 이 집에서 이사 가세요.”</p>
-        <p>엄마가 이유를 물었더니... “쿵쿵대고 걸어다니는 귀신이 윗집에 있는 게 아니라 지금 이 집 <strong>천장에 거꾸로</strong> 걸어다니고 있어요!”</p>
+        <p>엄마가 이유를 물었더니... <span class="click-image" data-img="image/urban1_ghost.webp" data-shake="true">“쿵쿵대고 걸어다니는 귀신이 윗집에 있는 게 아니라 지금 이 집 <strong>천장에 거꾸로</strong> 걸어다니고 있어요!”</span><span class="click-hint"><- 클릭!</span></p>
       </section>
     
       <!-- 대피와 회상 -->
