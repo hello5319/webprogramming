@@ -66,11 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }[boardParam] || "자유게시판";
 
   // ─── 5. 상세보기 모드 ─────────────────────────────────────────────────────────────
-  const sortButtons = document.querySelector('.sort-buttons');
-  
   if (postId) {
     // 나머지 UI 숨기기
-    [boardSelectorSection, showWriteFormBtn, writeForm, communityHeader, communityList, sortButtons]
+    [boardSelectorSection, showWriteFormBtn, writeForm, communityHeader, communityList]
       .forEach(el => el && (el.style.display = "none"));
 
     // 게시글 가져와 렌더링
