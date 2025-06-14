@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>😈 지금 바로 체험해 보세요!</h2>
             <p>방을 어둡게 하고, 헤드폰을 끼워 보세요.  
                괴담지옥이 준비한 무서운 밤이 시작됩니다.</p>
-            <a href="community.html?board=free" class="btn btn-primary">자유게시판으로 가기</a>
+            <a href="urban.html?filter=all" class="btn btn-primary">전체 괴담 보기</a>
           </section>
         </main>
       `
