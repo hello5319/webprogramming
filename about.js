@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
               <li>
                 <span class="feature-image" style="
                 display:inline-block;
-                width:100px;
-                height:100px;
+                width:100%;
+                height:100%;
                 background-image: url('image/photo-genre.webp');
                 background-size: cover;
                 background-position: center;
