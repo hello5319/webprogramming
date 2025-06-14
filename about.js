@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const contentMap = {
     intro: {
-      title: '사이트 소개',
+      title: '',
       body: `
         <main class="site-intro">
           <!-- 히어로 섹션 -->
