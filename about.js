@@ -31,31 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>🔍 주요 기능</h2>
             <ul class="features-list">
               <li>
-                <span class="feature-image" data-img="image/genre.jpg"></span>
+                <span class="feature-image" data-img="image/photo-genre.webp"></span>
                 <strong>다양한 장르</strong><br>
                 한국 괴담·해외 괴담·실화 이야기·사용자 제보까지  
                 <em>모든 공포 장르를 한눈에.</em>
               </li>
               <li>
-                <span class="feature-image" data-img="image/submit.jpg"></span>
+                <span class="feature-image" data-img="image/photo-submit.webp"></span>
                 <strong>사용자 제보</strong><br>
                 당신이 직접 경험한 기이한 사건도  
                 <em>언제든 제보</em>하고 공유할 수 있어요.
               </li>
               <li>
-                <span class="feature-image" data-img="image/audio.jpg"></span>
+                <span class="feature-image" data-img="image/photo-audio.webp"></span>
                 <strong>몰입형 오디오</strong><br>
                 공포 내레이터와 배경음악으로  
                 <em>현장감 100%</em>를 느껴보세요.
               </li>
               <li>
-                <span class="feature-image" data-img="image/curation.jpg"></span>
+                <span class="feature-image" data-img="image/photo-curation.webp"></span>
                 <strong>큐레이션 & 분류</strong><br>
                 주제·난이도·인기 필터로  
                 <em>내 취향에 딱 맞는 이야기</em>만 쏙쏙.
               </li>
               <li>
-                <span class="feature-image" data-img="images/community.jpg"></span>
+                <span class="feature-image" data-img="image/photo-community.webp"></span>
                 <strong>실시간 소통</strong><br>
                 댓글·좋아요로  
                 <em>다양한 사용자들과</em> 즐겨보세요.
