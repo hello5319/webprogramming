@@ -453,7 +453,7 @@ export const urbanData = [
         <!-- 문을 여는 순간 -->
         <section class="story-section">
           <p>문을 열자, 화장실 안은 싸늘했고, 습기가 가득했다. 유이는 말없이 마지막 칸 앞에 섰다. 그리고 조용히 이름을 불렀다.</p>
-          <p><span class="click-image" data-img="image/urban1.webp" data-shake="false">"하나코야, 놀자."</span><span class="click-hint"><- 클릭!</span></p>
+          <p>"하나코야, 놀자."</p>
           <p>"하나코야, 놀자."</p>
           <p>"하나코야, 놀자."</p>
           <p>그 순간, 안에서 작은 소리가 들렸다. 너무 작지만… 너무도 또렷하게.</p>
@@ -471,7 +471,7 @@ export const urbanData = [
         </section>
       
         <section class="story-section">
-          <p>안은 어두웠지만, 그 아이는 분명히 보였다. 흰 세일러복을 입은 여자아이. 고개를 깊게 숙이고 서 있었고, 머리카락은 얼굴을 가린 채, 가만히 움직이지 않았다. 그녀의 발은… 바닥에 닿아 있지 않았다.</p>
+          <p>안은 어두웠지만, 그 아이는 분명히 보였다. <span class="click-image" data-img="image/urban2.webp" data-shake="false">흰 세일러복을 입은 여자아이. 고개를 깊게 숙이고 서 있었고, 머리카락은 얼굴을 가린 채, 가만히 움직이지 않았다. 그녀의 발은… 바닥에 닿아 있지 않았다.</span><span class="click-hint"><- 클릭!</span></p>
           <p>유이는 뒤로 한 걸음 물러섰다. 몸이 굳었고, 말이 나오지 않았다.</p>
         </section>
       
@@ -526,7 +526,7 @@ export const urbanData = [
         <!-- 수상한 손님 등장 -->
         <section class="story-section">
           <p>그때 한 여인이 터벅터벅 목욕탕 입구로 걸어왔다. 빨간 우산에 빨간 코트 형태의 우의를 입고, 입술은 떨리고 몸을 부들부들 떨고 있었다.</p>
-          <p>"저기요... 혹시 영업 안 하세요...?"</p>
+          <p><span class="click-image" data-img="image/urban3.webp" data-shake="false">"저기요... 혹시 영업 안 하세요...?"</span><span class="click-hint"><- 클릭!</span></p>
           <p>사장은 “아, 비도 많이 오고 이제 문 닫으려는 참입니다”라 답했지만, 여인은 “샤워만 하고 나올게요… 제발요…”라 애원했다.</p>
         </section>
       
@@ -599,7 +599,7 @@ export const urbanData = [
         <!-- 졸음운전 경고 -->
         <section class="story-section">
           <p>처음엔 당황해 못 들은 척했지만, 아이는 다시 물었어요. "아저씨, 살고 싶어요? 죽고 싶어요?"</p>
-          <p>제가 "당연히… 살고 싶지…"라고 대답하자, 아이가 외쳤습니다. "그럼 일어나요!!!!!"</p>
+          <p>제가 "당연히… 살고 싶지…"라고 대답하자, 아이가 외쳤습니다. <span class="click-image" data-img="image/urban4.webp" data-shake="false">"그럼 일어나요!!!!!"</span><span class="click-hint"><- 클릭!</span></p>
           <p>그 외침에 정신이 번쩍 들어 보니, 제가 졸음운전으로 산 아래 낭떠러지로 거의 떨어질 뻔한 순간이었습니다.</p>
         </section>
       
@@ -652,7 +652,7 @@ export const urbanData = [
         <section class="story-section">
           <p>그때, 외할머니가 제 허리를 확 끌어내렸습니다. 저를 누르며 자세를 낮추셨고, 저는 속삭였죠.</p>
           <p>“할머니… 저기에…”</p>
-          <p>그러자 할머니는 손가락을 입에 대고 말씀하셨습니다. “조용히 하그라… 조용히 하그라…”</p>
+          <p>그러자 할머니는 손가락을 입에 대고 말씀하셨습니다. <span class="click-image" data-img="image/urban5.webp" data-shake="false">“조용히 하그라… 조용히 하그라…”</span><span class="click-hint"><- 클릭!</span></p>
         </section>
       
         <!-- 다시 본 형체 -->
@@ -698,7 +698,7 @@ export const urbanData = [
         <!-- 드러그 스토어 앞에서 -->
         <section class="story-section">
           <p>어느 날 퇴근길에 드러그 스토어에서 화장품 세일을 보고 한 시간 넘게 있었는데, 그 여자는 계속 광장을 돌고 있었어요.</p>
-          <p>가게에서 나왔을 때, 분수를 사이에 두고 그 여자가 절 뚫어지게 바라보고 있었죠.</p>
+          <p><span class="click-image" data-img="image/urban6.webp" data-shake="false">가게에서 나왔을 때, 분수를 사이에 두고 그 여자가 절 뚫어지게 바라보고 있었죠.</span><span class="click-hint"><- 클릭!</span></p>
         </section>
       
         <!-- 공포스러운 달리기 -->
@@ -758,7 +758,7 @@ export const urbanData = [
       
         <!-- 인터폰과 이상한 택배 -->
         <section class="story-section">
-          <p>현관 벨이 울렸고, "택배 왔습니다" 라는 말에 인터폰을 봤더니 택배기사처럼 보이는 남자가 상자를 들고 있었어요.</p>
+          <p>현관 벨이 울렸고, "택배 왔습니다" 라는 말에 인터폰을 봤더니 <span class="click-image" data-img="image/urban7.webp" data-shake="false">택배기사처럼 보이는 남자가 상자를 들고 있었어요.</span><span class="click-hint"><- 클릭!</span></p>
           <p>하지만 이상한 느낌이 들어 문을 열지 않고 창밖을 봤는데, 택배 트럭이 없었어요.</p>
         </section>
       
