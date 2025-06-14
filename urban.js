@@ -221,8 +221,8 @@ function setupCommentSection(postId) {
 }
 
 function renderUrbanDetail(id) {
-  const titleHeader = document.querySelector("h1");
-  const sortButtons = document.querySelector(".urban-sort-buttons");
+  const titleHeader = document.querySelector(".urban-title");
+  const sortButtons = document.querySelector(".urban-sort");
 
   if (titleHeader) titleHeader.style.display = "none";
   if (sortButtons) sortButtons.style.display = "none";
