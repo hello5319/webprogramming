@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
               <li>
                 <span class="feature-image" style="
                 display:inline-block;
-                width:100px;
-                height:100px;
-                background-image: url('image/photo-summit.webp');
+                width:100%;
+                height:60%;
+                background-image: url('image/photo-submit.webp');
                 background-size: cover;
                 background-position: center;
                 border-radius:8px;
@@ -53,19 +53,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 <em>언제든 제보</em>하고 공유할 수 있어요.
               </li>
               <li>
-                <span class="feature-image" data-img="image/photo-audio.webp"></span>
+                <span class="feature-image" style="
+                display:inline-block;
+                width:100%;
+                height:60%;
+                background-image: url('image/photo-audio.webp');
+                background-size: cover;
+                background-position: center;
+                border-radius:8px;
+                "></span>
                 <strong>몰입형 오디오</strong><br>
                 공포 내레이터와 배경음악으로  
                 <em>현장감 100%</em>를 느껴보세요.
               </li>
               <li>
-                <span class="feature-image" data-img="image/photo-curation.webp"></span>
+                <span class="feature-image" style="
+                display:inline-block;
+                width:100%;
+                height:60%;
+                background-image: url('image/photo-curation.webp');
+                background-size: cover;
+                background-position: center;
+                border-radius:8px;
+                "></span>
                 <strong>큐레이션 & 분류</strong><br>
                 주제·난이도·인기 필터로  
                 <em>내 취향에 딱 맞는 이야기</em>만 쏙쏙.
               </li>
               <li>
-                <span class="feature-image" data-img="image/photo-community.webp"></span>
+                <span class="feature-image" style="
+                display:inline-block;
+                width:100%;
+                height:60%;
+                background-image: url('image/photo-community.webp');
+                background-size: cover;
+                background-position: center;
+                border-radius:8px;
+                "></span>
                 <strong>실시간 소통</strong><br>
                 댓글·좋아요로  
                 <em>다양한 사용자들과</em> 즐겨보세요.
