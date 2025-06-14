@@ -398,38 +398,103 @@ nav {
 }
 
 /*about.html 디자인*/
-/* 리스트 아이템 레이아웃 */
-.intro-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.intro-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;           /* 사진과 텍스트 사이 간격 */
-  margin-bottom: 2rem; /* 항목 간 여유 */
-}
-
-/* 사진 스타일 */
-.intro-photo {
-  flex-shrink: 0;
-  width: 600px;        /* 원하는 가로 크기 */
-  height: 480px;        /* 원하는 세로 크기 */
-  object-fit: cover;   /* 사진 비율 유지하며 잘라냄 */
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
-
-/* 텍스트 영역 */
-.intro-text {
+/* 사이트 소개 페이지 공통 */
+.site-intro {
   color: #f1f1f1;
-  line-height: 1.5;
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-/* 강조된 제목(이모지+강조 텍스트) */
-.intro-text strong {
+.intro-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.intro-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.intro-hero p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* 소개 섹션 */
+.intro-about h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.intro-about p {
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* 기능 리스트 */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.features-list li {
+  background: #2a2a2a;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+.feature-image {
+  display: block;
+  width: 100%;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+}
+.feature-image[data-img] {
+  background-image: attr(data-img url);
+}
+.features-list strong {
   color: #e74c3c;
+}
+.features-list em {
+  color: #ccc;
+}
+
+/* CTA 섹션 */
+.intro-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+.intro-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.intro-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+.btn-primary {
+  background: #e74c3c;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #c0392b;
+}
+.btn-primary:active {
+  transform: scale(0.97);
 }
 
 /* ------ 홈(main-section, slider 등) ------ */
