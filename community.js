@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       checkUserLike();
       loadComments();
       renderActions();
+      renderCommentList();
     }
   });
 
@@ -242,63 +243,96 @@ document.addEventListener("DOMContentLoaded", () => {
       renderActions();
 
       // ── 5-4. 댓글 로드/관리 함수 ────────────────────────────────────────────────
-      async function loadComments() {
+      async function renderCommentList() {
         const listEl = document.getElementById("commentList");
         listEl.innerHTML = "";
+      
         const cQ = query(collection(db, "comments"), where("postId", "==", postId));
         const cSnap = await getDocs(cQ);
         const comments = cSnap.docs.map(d => ({ id: d.id, ...d.data() }));
         comments.sort((a, b) => new Date(a.date) - new Date(b.date));
-
+      
         if (!comments.length) {
-          listEl.innerHTML = "<p>댓글이 없습니다.</p>";
+          listEl.innerHTML = "<p style='color:#aaa;'>아직 댓글이 없습니다.</p>";
           return;
         }
-
-        comments.forEach(c => {
+      
+        comments.forEach(comment => {
           const div = document.createElement("div");
-          div.className = "comment-item";
           div.innerHTML = `
-            <p><strong>${c.nickname}</strong> <small>${c.date}</small></p>
-            <p id="commentText-${c.id}">${c.text}</p>
+            <div style="background:#1b1b1b; padding:1rem 1.2rem; border-radius:8px; display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem;">
+              <div>
+                <div style="font-weight:bold; color:#f2f2f2; margin-bottom:0.3rem;">${comment.nickname || '익명'}</div>
+                <div style="color:#ccc;" id="commentText-${comment.id}">${comment.text}</div>
+              </div>
+              ${
+                currentUser?.uid === comment.uid
+                  ? `<div style="margin-left:1rem; display:flex; flex-direction:column; gap:0.4rem;">
+                      <button data-id="${comment.id}" class="editBtn" style="background:#333; color:#fff; border:none; padding:0.3rem 0.8rem; border-radius:5px; cursor:pointer;">수정</button>
+                      <button data-id="${comment.id}" class="deleteBtn" style="background:#333; color:#fff; border:none; padding:0.3rem 0.8rem; border-radius:5px; cursor:pointer;">삭제</button>
+                    </div>`
+                  : ''
+              }
+            </div>
           `;
-          if (currentUser && currentUser.uid === c.uid) {
-            const btns = document.createElement("div");
-            btns.innerHTML = `
-              <button class="editBtn" data-id="${c.id}">수정</button>
-              <button class="deleteBtn" data-id="${c.id}">삭제</button>
-            `;
-            div.appendChild(btns);
-            // 삭제
-            btns.querySelector(".deleteBtn").addEventListener("click", async () => {
+          listEl.appendChild(div);
+      
+          // 수정/삭제 이벤트 바인딩
+          if (currentUser?.uid === comment.uid) {
+            const editBtn = div.querySelector(".editBtn");
+            const deleteBtn = div.querySelector(".deleteBtn");
+      
+            deleteBtn.addEventListener("click", async () => {
               if (confirm("댓글을 삭제하시겠습니까?")) {
-                await deleteDoc(doc(db, "comments", c.id));
-                loadComments();
+                await deleteDoc(doc(db, "comments", comment.id));
+                renderCommentList();
               }
             });
-            // 수정
-            btns.querySelector(".editBtn").addEventListener("click", () => {
-              const textEl = document.getElementById(`commentText-${c.id}`);
+      
+            editBtn.addEventListener("click", () => {
+              const textEl = document.getElementById(`commentText-${comment.id}`);
               const ta = document.createElement("textarea");
-              ta.value = c.text;
+              ta.value = comment.text;
+              ta.style.width = "100%";
+              ta.style.marginTop = "0.5rem";
+      
               const save = document.createElement("button");
               save.textContent = "저장";
+              save.style.marginTop = "0.5rem";
+              save.style.background = "#444";
+              save.style.color = "#fff";
+              save.style.border = "none";
+              save.style.padding = "0.4rem 0.8rem";
+              save.style.borderRadius = "5px";
+              save.style.cursor = "pointer";
+      
               const cancel = document.createElement("button");
               cancel.textContent = "취소";
+              cancel.style.marginLeft = "0.5rem";
+              cancel.style.marginTop = "0.5rem";
+              cancel.style.background = "#333";
+              cancel.style.color = "#fff";
+              cancel.style.border = "none";
+              cancel.style.padding = "0.4rem 0.8rem";
+              cancel.style.borderRadius = "5px";
+              cancel.style.cursor = "pointer";
+      
               textEl.replaceWith(ta);
-              btns.replaceWith(save);
-              save.after(cancel);
-
+              editBtn.replaceWith(save);
+              deleteBtn.replaceWith(cancel);
+      
               save.addEventListener("click", async () => {
                 const newText = ta.value.trim();
                 if (!newText) return alert("댓글 내용을 입력해주세요.");
-                await updateDoc(doc(db, "comments", c.id), { text: newText });
-                loadComments();
+                await updateDoc(doc(db, "comments", comment.id), { text: newText });
+                renderCommentList();
               });
-              cancel.addEventListener("click", loadComments);
+      
+              cancel.addEventListener("click", () => {
+                renderCommentList();
+              });
             });
           }
-          listEl.appendChild(div);
         });
       }
 
@@ -315,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const date = new Date().toISOString().slice(0, 10);
         await addDoc(collection(db, "comments"), { postId, uid: currentUser.uid, nickname, text, date });
         ta.value = "";
-        loadComments();
+        renderCommentList();
       });
     });
 
