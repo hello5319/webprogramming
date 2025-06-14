@@ -241,6 +241,24 @@ nav {
   to   { opacity: 0.4; }
 }
 
+.urban-item-body {
+  font-family: 'Noto Serif KR', serif; /* 공포 분위기에 어울리는 서체 */
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #f0f0f0;
+  background-color: #111;  /* 어두운 배경 */
+  padding: 2rem;
+  border-radius: 1rem;
+  white-space: pre-line; /* 줄바꿈 유지 */
+  letter-spacing: 0.03em;
+  box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+.urban-item-body:hover {
+  background-color: #181818;
+}
+
 /* ------ community(커뮤니티) ------ */
 .community-header {
   display: flex;
