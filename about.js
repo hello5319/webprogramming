@@ -76,8 +76,25 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     greeting: {
       title: '운영자 인사말',
-      body: `안녕하세요. 괴담지옥을 운영하는 운영자입니다.<br>
-             공포를 사랑하는 모든 분들과 함께 이 공간을 만들어가고 싶습니다.`
+      body: `
+        <section class="greeting-ceo">
+          <h2>👋 운영자 인사말</h2>
+          <div class="greeting-body">
+            <p>안녕하세요, 괴담지옥을 운영하는 <strong>운영자 홍길동</strong>입니다.</p>
+            <p>어릴 적 친구들이 들려주던 오싹한 이야기들이 머릿속에서 떠나지 않아,  
+               “진짜 소름”을 찾아 헤매던 제가 이 공간을 만들게 되었습니다.</p>
+            <p>괴담지옥은 단순한 모음집이 아니라,  
+               <em>“공포를 함께 즐기고, 또 나누는 커뮤니티”</em>가 되길 소망합니다.</p>
+            <p>여러분의 생생한 제보와 뜨거운 피드백이 모여야만  
+               이곳만의 특별한 전설이 완성됩니다.</p>
+            <p class="greeting-signoff">  
+              늘 안전을 우선하시고,  
+              무서운 밤 속에서도 즐거운 추억을 쌓으시길—<br>
+              괴담지옥 운영자 드림.
+            </p>
+          </div>
+        </section>
+      `
     },
     contact: {
       title: '문의/제보하기',
