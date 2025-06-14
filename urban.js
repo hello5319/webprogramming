@@ -263,32 +263,39 @@ document.addEventListener("click", (e) => {
         <button id="likeBtn">❤️ 좋아요</button> <span id="likeCount">0</span>
       </div>
 
-      <div class="comment-section" style="margin-top:2rem; background-color: #111; border-radius: 1rem; padding: 3rem; color: #eee; box-shadow: 0 0 100px rgba(255,0,0,0.15);">
-        <h3 style="font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.4rem;">🗨️ 댓글</h3>
+      <div class="comment-section" style="margin-top:2rem; background-color:#111; border-radius:1rem; padding:1.5rem; color:#eee; box-shadow:0 0 10px rgba(255,0,0,0.15);">
+        <h3 style="font-size:1.3rem; margin-bottom:1rem; border-bottom:1px solid #333; padding-bottom:0.4rem;">🗨️ 댓글</h3>
       
-        <div id="commentList" style="margin-bottom: 1rem;"></div>
-      
-        <div class="comment-section" style="margin-top:2rem; background-color: #111; border-radius: 1rem; padding: 1.5rem; color: #eee; box-shadow: 0 0 10px rgba(255,0,0,0.15);">
-          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.4rem;">🗨️ 댓글</h3>
-        
-          <div id="commentList" style="margin-bottom: 1rem;"></div>
-        
-          <form id="commentForm" style="display: flex; flex-direction: column; gap: 0.8rem;">
-            <input
-              type="text"
-              id="commentInput"
-              placeholder="댓글을 입력하세요"
-              required
-              style="width: 100%; background-color: #1b1b1b; color: #fff; border: none; border-radius: 0.5rem; padding: 0.8rem; font-size: 1rem;"
-            />
-            <button
-              type="submit"
-              style="align-self: flex-end; background-color: crimson; color: white; padding: 0.5rem 1.2rem; border: none; border-radius: 0.4rem; font-size: 0.95rem; cursor: pointer;"
-            >
-              댓글 작성
-            </button>
-          </form>
+        <div id="commentList" style="margin-bottom:1.5rem;">
+          <!-- 예시 댓글 구조 -->
+          <!-- 
+          <div style="margin-bottom:1rem; padding:0.5rem 0; border-bottom:1px solid #222;">
+            <div><strong style="color:#f0f0f0;">닉네임:</strong> <span style="color:#ccc;">댓글 내용</span></div>
+            <div style="margin-top:0.3rem;">
+              <button style="margin-right:0.5rem; background:#333; color:#fff; border:none; padding:0.3rem 0.8rem; border-radius:5px; cursor:pointer;">수정</button>
+              <button style="background:#333; color:#fff; border:none; padding:0.3rem 0.8rem; border-radius:5px; cursor:pointer;">삭제</button>
+            </div>
+          </div>
+          -->
         </div>
+      
+        <form id="commentForm" style="display:flex; flex-direction:column; gap:0.8rem; border-top:1px solid #333; padding-top:1rem;">
+          <input
+            type="text"
+            id="commentInput"
+            placeholder="댓글을 입력하세요"
+            required
+            style="width:100%; background-color:#1b1b1b; color:#fff; border:none; border-radius:0.5rem; padding:0.8rem; font-size:1rem;"
+          />
+          <button
+            type="submit"
+            style="align-self:flex-end; background-color:crimson; color:white; padding:0.5rem 1.2rem; border:none; border-radius:0.4rem; font-size:0.95rem; cursor:pointer;"
+          >
+            댓글 작성
+          </button>
+        </form>
+      </div>
+
 
       <button class="urban-back-btn" style="margin-top:2rem; background:#222;color:#fafafa;border:none;padding:0.7rem 1.6rem;border-radius:8px;cursor:pointer;">
         목록으로
