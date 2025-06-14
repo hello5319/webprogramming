@@ -11,23 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
       <ul>
         <li>
           📚 <strong>다양한 장르</strong>: 한국 괴담부터 해외 괴담, 실화 기반 이야기, 사용자 제보 괴담까지 폭넓게 수집<br>
-          <img src="images/photo-genre.webp" alt="다양한 장르 사진" class="intro-photo">
+          <img src="image/photo-genre.webp" alt="다양한 장르 사진" class="intro-photo">
         </li>
         <li>
           🖋️ <strong>사용자 참여</strong>: 직접 체험한 기이한 경험이나 지역 괴담을 제보하고, 커뮤니티 기능를 통한 사용자 간의 소통<br>
-          <img src="images/photo-user.webp" alt="사용자 참여 사진" class="intro-photo">
+          <img src="image/photo-user.webp" alt="사용자 참여 사진" class="intro-photo">
         </li>
         <li>
           🔊 <strong>몰입형 오디오</strong>: 공포 배경음과 각 스토리에 어울리는 음성 내레이션으로 생생한 공포 분위기 제공<br>
-          <img src="images/photo-audio.webp" alt="몰입형 오디오 사진" class="intro-photo">
+          <img src="image/photo-audio.webp" alt="몰입형 오디오 사진" class="intro-photo">
         </li>
         <li>
           🗂️ <strong>큐레이션 & 분류</strong>: 주제별, 난이도별로 정리된 스토리 목록으로 빠르고 손쉬운 탐색<br>
-          <img src="images/photo-curation.webp" alt="큐레이션 & 분류 사진" class="intro-photo">
+          <img src="image/photo-curation.webp" alt="큐레이션 & 분류 사진" class="intro-photo">
         </li>
         <li>
           🌐 <strong>실시간 소통</strong>: 댓글, 좋아요 기능으로 다른 이용자와 감상평 교류, 인기 콘텐츠 랭킹 제공<br>
-          <img src="images/photo-community.webp" alt="실시간 소통 사진" class="intro-photo">
+          <img src="image/photo-community.webp" alt="실시간 소통 사진" class="intro-photo">
         </li>
       </ul>
       <p>매주 새로운 괴담이 업데이트되며, 운영자가 엄선한 추천 목록을 통해 잊지 못할 공포 체험을 선사합니다.<br>
