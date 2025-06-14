@@ -269,21 +269,21 @@ document.addEventListener("click", (e) => {
         <div id="commentList" style="margin-bottom: 1rem;"></div>
       
         <div class="comment-section" style="margin-top:2rem; background-color: #111; border-radius: 1rem; padding: 1.5rem; color: #eee; box-shadow: 0 0 10px rgba(255,0,0,0.15);">
-          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.4rem;">💬 댓글</h3>
+          <h3 style="font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.4rem;">🗨️ 댓글</h3>
         
-          <div id="commentList" style="margin-bottom: 1.2rem;"></div>
+          <div id="commentList" style="margin-bottom: 1rem;"></div>
         
-          <form id="commentForm" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <form id="commentForm" style="display: flex; flex-direction: column; gap: 0.8rem;">
             <input
               type="text"
               id="commentInput"
               placeholder="댓글을 입력하세요"
               required
-              style="flex: 1 1 auto; min-width: 0; background-color: #1b1b1b; color: #fff; border: 1px solid #444; border-radius: 0.5rem; padding: 0.8rem; font-size: 1rem;"
+              style="width: 100%; background-color: #1b1b1b; color: #fff; border: none; border-radius: 0.5rem; padding: 0.8rem; font-size: 1rem;"
             />
             <button
               type="submit"
-              style="background-color: crimson; color: white; padding: 0.5rem 1.2rem; border: none; border-radius: 0.4rem; font-size: 0.95rem; cursor: pointer;"
+              style="align-self: flex-end; background-color: crimson; color: white; padding: 0.5rem 1.2rem; border: none; border-radius: 0.4rem; font-size: 0.95rem; cursor: pointer;"
             >
               댓글 작성
             </button>
