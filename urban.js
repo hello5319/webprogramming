@@ -406,7 +406,7 @@ export const urbanData = [
         <!-- 문을 여는 순간 -->
         <section class="story-section">
           <p>문을 열자, 화장실 안은 싸늘했고, 습기가 가득했다. 유이는 말없이 마지막 칸 앞에 섰다. 그리고 조용히 이름을 불렀다.</p>
-          <p><span class="click-image" data-img="image/urban1.webp" data-shake="false">"하나코야, 놀자."</span><span class="click-hint">클릭!</span></p>
+          <p><span class="click-image" data-img="image/urban1.webp" data-shake="false">"하나코야, 놀자."</span><span class="click-hint"><- 클릭!</span></p>
           <p>"하나코야, 놀자."</p>
           <p>"하나코야, 놀자."</p>
           <p>그 순간, 안에서 작은 소리가 들렸다. 너무 작지만… 너무도 또렷하게.</p>
