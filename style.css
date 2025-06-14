@@ -398,17 +398,66 @@ nav {
 }
 
 /*login.html 로그인 폼 디자인*/
+/* ── authSection 을 그리드로 전환 ── */
 #authSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;                /* 행·열 모두 1rem 간격 */
   max-width: 360px;
   margin: 2rem auto;
-  padding: 1.5rem;
-  background: #2a2a2a;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
 }
+
+/* ── 입력창과 로그아웃 버튼은 한 줄 전체 너비 ── */
+#authSection input,
+#authSection #signOutBtn {
+  grid-column: 1 / -1;
+}
+
+/* ── 회원가입 · 로그인 버튼은 반씩 나눠서 ── */
+#signUpBtn {
+  grid-column: 1 / 2;
+}
+#signInBtn {
+  grid-column: 2 / 3;
+}
+
+/* ── 버튼·입력창 공통 스타일 (이전 제안 그대로) ── */
+#authSection input {
+  padding: .6rem .8rem;
+  background: #444;
+  border: 1px solid #555;
+  border-radius: .4rem;
+  color: #f1f1f1;
+  font-size: 1rem;
+  transition: border-color .2s;
+}
+#authSection input:focus {
+  outline: none;
+  border-color: #e74c3c;
+}
+
+#authSection button {
+  padding: .7rem;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: .4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+#authSection button:hover {
+  background: #c0392b;
+}
+#authSection button:active {
+  transform: scale(.97);
+}
+
+/* ── 숨김 속성 유지 ── */
+#authSection button[style*="display: none"] {
+  display: none !important;
+}
+
 
 /* ── 공통 입력창 ── */
 #authSection input {
