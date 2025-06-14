@@ -263,7 +263,7 @@ document.addEventListener("click", (e) => {
         <button id="likeBtn">❤️ 좋아요</button> <span id="likeCount">0</span>
       </div>
 
-      <div class="comment-section" style="margin-top:2rem; background-color: #111; border-radius: 1rem; padding: 1.5rem; color: #eee; box-shadow: 0 0 10px rgba(255,0,0,0.15);">
+      <div class="comment-section" style="margin-top:2rem; background-color: #111; border-radius: 1rem; padding: 5rem; color: #eee; box-shadow: 0 0 10px rgba(255,0,0,0.15);">
         <h3 style="font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid #333; padding-bottom: 0.4rem;">🗨️ 댓글</h3>
       
         <div id="commentList" style="margin-bottom: 1rem;"></div>
@@ -274,7 +274,7 @@ document.addEventListener("click", (e) => {
             id="commentInput"
             placeholder="댓글을 입력하세요"
             required
-            style="width: 100%; background-color: #1b1b1b; color: #fff; border: 1px solid #444; border-radius: 0.5rem; padding: 0.8rem; font-size: 1rem;"
+            style="width: 90%; background-color: #1b1b1b; color: #fff; border: 1px solid #444; border-radius: 0.5rem; padding: 0.8rem; font-size: 1rem;"
           />
           <button
             type="submit"
