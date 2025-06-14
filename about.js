@@ -70,15 +70,45 @@ document.addEventListener('DOMContentLoaded', () => {
     greeting: {
       title: '운영자 인사말',
       body: `
-            <p>안녕하세요, 괴담지옥을 운영하는 <strong>오하준/이준혁/권오현</strong>입니다.</p>
-            <p>어릴 적 친구들이 들려주던 오싹한 이야기들이 머릿속에서 떠나지 않아,  
-               “진짜 소름” 을 찾아 헤매던 저희들은 이 공간을 만들게 되었습니다.</p>
-            <p>괴담지옥은 단순한 모음집이 아니라,  
-               <em>“공포를 함께 즐기고, 또 나누는 커뮤니티”</em> 가 되길 바랍니다.</p>
-            <p>여러분의 생생한 제보와 뜨거운 피드백이 모여야만  
-               이곳만의 특별한 공간간이 완성됩니다.</p>    
-            <p>무서운 밤 속에서도 즐거운 추억을 쌓으시길
-            </p>
+            <section style="max-width: 900px; margin: 3rem auto; padding: 2rem; background-color: #111; border-radius: 1rem; box-shadow: 0 0 15px rgba(255, 0, 0, 0.15); color: #eee; line-height: 1.7; font-size: 1.05rem;">
+              <h2 style="font-size: 1.6rem; margin-bottom: 1.2rem; border-bottom: 1px solid #333; padding-bottom: 0.5rem;">👻 운영자 인사말</h2>
+              
+              <p style="margin-bottom: 1.2rem;">
+                안녕하세요. <strong style="color: #e01c1c;">괴담지옥</strong>을 운영하는 <strong>오하준</strong>, <strong>이준혁</strong>, <strong>권오현</strong>입니다.
+              </p>
+            
+              <p style="margin-bottom: 1.2rem;">
+                저희는 어릴 적 친구들과 둘러앉아 나누던 오싹한 이야기들, 밤마다 생각나 잠 못 들게 만들던 소문들, 그리고 그때의 아찔한 감정들을 잊지 못해 이 공간을 만들게 되었습니다.
+              </p>
+            
+              <p style="margin-bottom: 1.2rem;">
+                <strong style="color: #e01c1c;">괴담지옥</strong>은 단순히 괴담을 모아 보여주는 페이지가 아닙니다. 누구나 공포를 공유하고, 소통하고, 함께 즐길 수 있는 살아 있는 커뮤니티입니다.
+              </p>
+            
+              <p style="margin-bottom: 1.2rem;">
+                익명의 사용자들이 제보하는 실화 괴담, 창작 이야기, 도시전설은 물론, <span style="color: #f2f2f2;">음성 나레이션</span>과 <span style="color: #f2f2f2;">몰입도 높은 BGM</span>까지 더해져, 더 깊고 현실감 있는 공포 체험이 가능하도록 구성하고 있습니다.
+              </p>
+            
+              <p style="margin-bottom: 1.2rem;">
+                무엇보다 이곳은 무서운 이야기를 소비하는 데 그치지 않고, <strong>기억을 나누고 감정을 공감하며 함께 ‘지옥’을 만들어가는 공간</strong>입니다.
+              </p>
+            
+              <p style="margin-bottom: 1.2rem;">
+                저희 운영진은 진심을 담은 콘텐츠만을 소개하겠다는 약속 아래, 매 게시글과 피드백에 정성을 다하고 있으며, <strong style="color: #e01c1c;">공포를 매개로 한 교류와 창작이 활발히 이루어지는 특별한 장소</strong>가 되도록 지속적으로 개선하고 성장해 나가겠습니다.
+              </p>
+            
+              <p style="margin-bottom: 1.5rem;">
+                누군가에게는 지나간 이야기일 수 있지만, 누군가에게는 지금 이 순간에도 계속되고 있는 이야기일 수 있습니다.
+              </p>
+            
+              <p style="margin-bottom: 0.5rem;">
+                <strong>이곳 괴담지옥에서 여러분만의 이야기를 함께 나눠주세요.</strong>
+              </p>
+            
+              <p>
+                그리고 무서운 밤 속에서도, <span style="color: #f2f2f2;">누군가와 함께 있다는 위안</span>과 <span style="color: #f2f2f2;">짜릿한 전율</span>을 느껴보시기 바랍니다.
+              </p>
+          </section>
       `
     },
     contact: {
