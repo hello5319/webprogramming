@@ -912,6 +912,6 @@ document.addEventListener("click", (e) => {
 
     setTimeout(() => {
       popup.remove();
-    }, 2500);
+    }, 1000);
   }
 });
