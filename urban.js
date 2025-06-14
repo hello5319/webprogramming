@@ -514,6 +514,7 @@ export const urbanData = [
   {
     id: 4,
     title: '졸음운전',
+    likes: 0,
     date: '2025-05-19',
     filter: 'user',
     level: 1,
@@ -566,6 +567,7 @@ export const urbanData = [
   {
     id: 5,
     title: '석류나무 옆 담벼락',
+    likes: 0,
     date: '2025-06-12',
     filter: 'user',
     level: 1,
