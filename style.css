@@ -397,6 +397,60 @@ nav {
   background: #a81414;
 }
 
+/*login.html 로그인 폼 디자인*/
+#authSection {
+  max-width: 360px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #2a2a2a;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── 공통 입력창 ── */
+#authSection input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: #444;
+  border: 1px solid #555;
+  border-radius: 0.4rem;
+  color: #f1f1f1;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+#authSection input:focus {
+  outline: none;
+  border-color: #e74c3c;
+}
+
+/* ── 공통 버튼 ── */
+#authSection button {
+  width: 100%;
+  padding: 0.7rem;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+#authSection button:hover {
+  background: #c0392b;
+}
+#authSection button:active {
+  transform: scale(0.97);
+}
+
+/* ── 비활성 버튼 (로그아웃) ── */
+#authSection button[style*="display: none"] {
+  display: none !important;
+}
+
 
 /* ------ 홈(main-section, slider 등) ------ */
 .main-section {
