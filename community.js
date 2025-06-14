@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // 상세보기 모드라면 작성자 체크 및 액션 재실행
     if (postId) {
       checkUserLike();
-      loadComments();
       renderActions();
       renderCommentList();
     }
@@ -335,8 +334,6 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       }
-
-      loadComments();
 
       // 댓글 작성
       document.getElementById("addCommentButton").addEventListener("click", async () => {
