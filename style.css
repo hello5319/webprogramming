@@ -459,6 +459,7 @@ nav {
 }
 .features-list li {
   background: #2a2a2a;
+  min-height: 300px;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
