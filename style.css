@@ -241,7 +241,7 @@ nav {
   to   { opacity: 0.4; }
 }
 
-.urban-item-body {
+.story-content {
   font-family: 'Noto Serif KR', serif; /* 공포 분위기에 어울리는 서체 */
   font-size: 1.1rem;
   line-height: 1.85;
@@ -255,7 +255,7 @@ nav {
   transition: background 0.3s ease;
 }
 
-.urban-item-body:hover {
+.story-content:hover {
   background-color: #181818;
 }
 
